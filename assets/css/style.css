@@ -2,9 +2,12 @@ body {
   margin: 0;
   padding: 0;
   color: #2c3e50;
-  font-family: "Average Sans", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: linear-gradient(135deg, #3a6e80 0%, #5a8a96 100%);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .resume-wrapper {
@@ -51,19 +54,23 @@ header .header-content {
 
 header .name-container {
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 700;
+  font-family: "Space Grotesk", "Inter", sans-serif;
   margin: 0 0 10px 0;
   background: linear-gradient(45deg, #fff, #f0f8ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 header .job-container {
   font-size: 1.5rem;
   margin: 0 0 30px 0;
   color: rgba(255, 255, 255, 0.9);
-  font-weight: 300;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.01em;
 }
 
 header .contact-container {
@@ -153,7 +160,9 @@ header .contact-container .contact-list li span {
   color: #2c3e50;
   border-bottom: 3px solid #3a6e80;
   margin-bottom: 25px;
-  font-weight: 300;
+  font-weight: 600;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  letter-spacing: -0.01em;
 }
 
 #main ul li {
@@ -168,6 +177,8 @@ header .contact-container .contact-list li span {
   color: #2c3e50;
   margin-bottom: 8px;
   font-weight: 600;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .experience .company {
@@ -193,6 +204,8 @@ header .contact-container .contact-list li span {
   font-size: 15px;
   line-height: 1.6;
   color: #4a5568;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
 }
 
 .experience .highlight {
@@ -222,7 +235,9 @@ header .contact-container .contact-list li span {
   color: #2c3e50;
   font-size: 1.3rem;
   font-weight: 600;
+  font-family: "Inter", sans-serif;
   margin-bottom: 10px;
+  letter-spacing: -0.01em;
 }
 
 .project h3::after {
@@ -234,6 +249,9 @@ header .contact-container .contact-list li span {
   font-size: 15px;
   color: #4a5568;
   margin-bottom: 15px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .project .tags {
@@ -298,9 +316,10 @@ header .contact-container .contact-list li span {
   width: 40%;
   height: auto;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   color: #2c3e50;
+  font-family: "Inter", sans-serif;
 }
 
 .skill .skill-bar {
