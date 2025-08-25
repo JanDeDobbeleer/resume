@@ -414,3 +414,158 @@ footer a {
     margin-bottom: 10px;
   }
 }
+
+/* PDF Print Styles */
+@media print {
+  body {
+    background: white !important;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .resume-wrapper {
+    max-width: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: white !important;
+  }
+
+  header {
+    background: #3a6e80 !important;
+    border-radius: 0 !important;
+    padding: 30px 20px 20px !important;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  header .profile-picture {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  header .name-container {
+    font-size: 2rem !important;
+  }
+
+  header .contact-container .contact-list {
+    font-size: 11px !important;
+  }
+
+  #main {
+    padding: 20px !important;
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+  }
+
+  #main > .resume-item-wrapper {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .sidebar {
+    position: static !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    page-break-before: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+  }
+
+  .sidebar .resume-item {
+    display: block !important;
+    width: auto !important;
+    margin-right: 0 !important;
+    margin-bottom: 15px !important;
+    flex: 1 !important;
+  }
+
+  .sidebar .resume-item:nth-child(3n) {
+    margin-right: 0 !important;
+  }
+
+  .resume-item {
+    box-shadow: none !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 8px !important;
+    padding: 20px !important;
+    margin-bottom: 15px !important;
+    page-break-inside: avoid;
+  }
+
+  .resume-item h2 {
+    font-size: 16px !important;
+    margin-bottom: 12px !important;
+    page-break-after: avoid;
+  }
+
+  .resume-item h3 {
+    font-size: 14px !important;
+    page-break-after: avoid;
+  }
+
+  .experience {
+    page-break-inside: avoid;
+    margin-bottom: 15px !important;
+  }
+
+  .experience .job-title {
+    font-size: 13px !important;
+  }
+
+  .experience .company {
+    font-size: 12px !important;
+  }
+
+  .experience .date {
+    font-size: 11px !important;
+  }
+
+  .bullets li {
+    font-size: 11px !important;
+    margin-bottom: 4px !important;
+    page-break-inside: avoid;
+  }
+
+  .sidebar {
+    position: static !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    page-break-before: auto !important;
+  }
+
+  .sidebar .resume-item {
+    display: inline-block !important;
+    width: calc(33.333% - 10px) !important;
+    margin-right: 15px !important;
+    margin-bottom: 15px !important;
+    vertical-align: top !important;
+  }
+
+  .sidebar .resume-item:nth-child(3n) {
+    margin-right: 0 !important;
+  }
+
+  /* Force page breaks before major sections */
+  .resume-item:nth-child(3) {
+    page-break-before: page;
+  }
+
+  /* Avoid orphaned content */
+  .resume-item:last-child {
+    page-break-inside: avoid;
+  }
+
+  /* Hide unnecessary elements for print */
+  footer {
+    display: none !important;
+  }
+
+  /* Ensure proper spacing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
