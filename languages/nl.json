@@ -1,0 +1,115 @@
+{
+  "header": {
+    "jobTitle": "Engineering Leader & Open Source Innovator"
+  },
+  "sections": {
+    "achievements": {
+      "title": "Key Achievements",
+      "ohMyPosh": {
+        "description": "Ontwikkelde 's werelds populairste cross-platform prompt theme engine, wat de manier waarop miljoenen developers met hun terminals omgaan heeft getransformeerd. Gepresenteerd in Microsoft keynotes en wereldwijd gebruikt door developers.",
+        "impact": "Impact",
+        "bullets": {
+          "windowsWednesday": "Gepresenteerd in Windows Wednesday - Microsoft Officieel Kanaal",
+          "hanselminutes": "Gast op Hanselminutes Podcast",
+          "liveCoding": "Live coding sessie met Microsoft Principal Engineers",
+          "microsoftStoreAward": "Winnaar van Microsoft Store Award 2024 - Developer Tools categorie"
+        }
+      },
+      "githubStar": {
+        "description": "Erkend door GitHub als GitHub Star voor uitzonderlijke bijdragen aan de open source community en developer ecosysteem.",
+        "recognition": "Erkenning",
+        "highlight": "Een van 150 developers wereldwijd in het GitHub Stars programma"
+      },
+      "microsoftMvp": {
+        "description": "Bekroond met Microsoft Most Valuable Professional voor bijdragen aan de developer community en cloud technologieën.",
+        "achievement": "Prestatie",
+        "highlight": "Erkend door Microsoft voor technische expertise en community impact"
+      },
+      "thoughtLeadership": {
+        "title": "Engineering Thought Leadership",
+        "description": "Geef interne en externe workshops over Agile, DevOps, AI en engineering practices om ontwikkeling te schalen en lead times te verbeteren. Deel expertise binnen organisaties om engineering excellence en transformatie te stimuleren.",
+        "impact": "Impact",
+        "highlight": "Stel teams en organisaties in staat om software ontwikkeling te versnellen en engineering practices te verbeteren"
+      }
+    },
+    "leadership": {
+      "title": "Leadership Skills",
+      "nike": {
+        "description": "Leid meerdere high-performing engineering teams die kritieke platform services leveren voor Nike EMEA, ondersteunend miljoenen klanten in Europa. Fungeerde als Delivery Manager voor software en third-party vendor solutions, waarbij naadloze integratie en succesvolle ontwikkeling met interne en externe teams werd gewaarborgd. Geef regelmatig interne en externe workshops over Agile, DevOps, AI en engineering practices om delivery te schalen en lead times te verbeteren in de organisatie.",
+        "impact": "Impact",
+        "highlight": "Management van 70+ engineers verdeeld over 5 teams, aansturing van digital transformation initiatieven"
+      },
+      "trendminerCto": {
+        "description": "Vergroting van de engineering organisatie en aansturing van cloud transformation strategie als CTO na succesvolle acquisitie door Software AG. Fungeerde als Cloud Architect voor het ontwerp van de nieuwe cloud-native implementatie, modernisering van de platform architectuur voor enterprise-scale deployment.",
+        "achievement": "Prestatie",
+        "highlight": "Leidde post-acquisitie integratie en modernisering van enterprise software stack"
+      },
+      "trendminerEm": {
+        "description": "Transformeerde engineering practices en team dynamiek, waardoor snelle groei mogelijk werd om de evoluerende enterprise klantenbasis te ondersteunen. Droeg bij aan architectuur ontwerp voor de nieuwe cloud-native platform implementatie.",
+        "results": "Resultaten",
+        "highlight": "Verbeterde deployment frequentie met 300%, reduceerde lead time met 60%"
+      },
+      "inThePocket": {
+        "description": "Leidde cross-functionele agile teams die innovatieve digitale oplossingen leverden voor Fortune 500 klanten, consistent projecten op tijd en onder budget opgeleverd. Fungeerde als Architect voor banking, identificatie en luchtvaart oplossingen, ontwierp veilige en schaalbare cloud infrastructuren voor mission-critical applicaties.",
+        "businessImpact": "Business Impact",
+        "highlight": "Beheerde €2M+ project portfolio met 98% client satisfaction rate"
+      },
+      "unleashedLead": {
+        "description": "Groeien van de engineering organisatie van 8 naar 22 engineers verdeeld over drie product lijnen (Mobile Vikings, JIM Mobile, Stievie).",
+        "scale": "Schaal",
+        "highlight": "175% team groei, implementeerde DevOps practices voor meerdere merken"
+      }
+    },
+    "earlyCareer": {
+      "title": "Early Career & Technical Foundation",
+      "frontendApiLead": {
+        "description": "Leidde technische migratie naar nieuwe backend architectuur, waarbij business requirements werden afgestemd met technische implementatie doorheen meerdere product teams.",
+        "technicalLeadership": "Technisch Leiderschap",
+        "highlight": "Ontwierp API strategie voor 3 mobile brands"
+      },
+      "mobileAppLead": {
+        "description": "Bouwde en leidde mobile development team, stimuleerde innovatie in de telecom app ruimte met focus op user experience en technische excellentie.",
+        "innovation": "Innovatie",
+        "highlight": "Pionier van mobile-first customer experience in telecom"
+      },
+      "mobileAppDev": {
+        "description": "Cross-platform mobile developer gespecialiseerd in Windows Phone/UWP (C#), met bijdragen aan Android (Java) en iOS (Objective-C) applicaties."
+      },
+      "supportEngineer": {
+        "description": "Evolueerde van customer support naar infrastructure management, waarbij expertise in Azure cloud services werd opgebouwd en DevOps fundamenten werden gelegd.",
+        "cloudPioneer": "Cloud Pionier",
+        "highlight": "Vroege Azure adopter, bouwde schaalbaar digital publishing platform"
+      }
+    },
+    "craftsmanship": {
+      "title": "Craftsmanship Foundation",
+      "subtitle": "Mijn precisie en aandacht voor detail in software engineering komt voort uit jaren van luxe horlogemaker vakmanschap.",
+      "workshopManager": {
+        "title": "Workshop Manager & Horlogemaker",
+        "description": "Beheerde luxe horloge service center voor Omega, Tag Heuer en Rado. Ontwikkelde leiderschap en quality management vaardigheden."
+      },
+      "certifiedWatchmaker": {
+        "title": "Gecertificeerd Horlogemaker",
+        "description": "Gecertificeerd specialist voor Jaeger LeCoultre en Panerai. Beheerste precisiewerk onder strikte kwaliteitsstandaarden."
+      },
+      "watchmakerTrainer": {
+        "title": "Horlogemaker & Trainer",
+        "description": "Gespecialiseerd in Cartier, Baume & Mercier en Montblanc. Leidde training programma's, ontwikkelde vroege onderwijzen en mentorship vaardigheden."
+      }
+    },
+    "skills": {
+      "leadership": {
+        "title": "Leadership Skills",
+        "teamLeadership": "Team Leadership",
+        "publicSpeaking": "Public Speaking",
+        "strategicPlanning": "Strategic Planning"
+      },
+      "technical": {
+        "title": "Technical Stack"
+      },
+      "languages": {
+        "title": "Talen"
+      }
+    }
+  }
+}

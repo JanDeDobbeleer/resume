@@ -1,0 +1,115 @@
+{
+  "header": {
+    "jobTitle": "Engineering Leader & Open Source Innovator"
+  },
+  "sections": {
+    "achievements": {
+      "title": "Key Achievements",
+      "ohMyPosh": {
+        "description": "Built the world's most popular cross-platform prompt theme engine, transforming how millions of developers interact with their terminals. Featured in Microsoft keynotes and used by developers globally.",
+        "impact": "Impact",
+        "bullets": {
+          "windowsWednesday": "Featured in Windows Wednesday - Microsoft Official Channel",
+          "hanselminutes": "Guest on Hanselminutes Podcast",
+          "liveCoding": "Live coding session with Microsoft Principal Engineers",
+          "microsoftStoreAward": "Winner of Microsoft Store Award 2024 - Developer Tools category"
+        }
+      },
+      "githubStar": {
+        "description": "Recognized by GitHub as a GitHub Star for exceptional contributions to the open source community and developer ecosystem.",
+        "recognition": "Recognition",
+        "highlight": "One of 150 developers worldwide in the GitHub Stars program"
+      },
+      "microsoftMvp": {
+        "description": "Awarded Microsoft Most Valuable Professional for contributions to the developer community and cloud technologies.",
+        "achievement": "Achievement",
+        "highlight": "Recognized by Microsoft for technical expertise and community impact"
+      },
+      "thoughtLeadership": {
+        "title": "Engineering Thought Leadership",
+        "description": "Delivering internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times. Sharing expertise across organizations to drive engineering excellence and transformation.",
+        "impact": "Impact",
+        "highlight": "Enabling teams and organizations to accelerate delivery and improve engineering practices"
+      }
+    },
+    "leadership": {
+      "title": "Leadership Experience",
+      "nike": {
+        "description": "Leading multiple high-performing engineering teams delivering critical platform services for Nike EMEA, supporting millions of customers across Europe. Acted as Delivery Manager for software and third-party vendor solutions, ensuring seamless integration and successful delivery across internal and external teams. Regularly conduct internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times across the organization.",
+        "impact": "Impact",
+        "highlight": "Managing 70+ engineers across 5 teams, driving digital transformation initiatives"
+      },
+      "trendminerCto": {
+        "description": "Scaled engineering organization and drove cloud transformation strategy as CTO following successful acquisition by Software AG. Served as Cloud Architect for the design of the new cloud-native implementation, modernizing the platform architecture for enterprise-scale deployment.",
+        "achievement": "Achievement",
+        "highlight": "Led post-acquisition integration and modernization of enterprise software stack"
+      },
+      "trendminerEm": {
+        "description": "Transformed engineering practices and team dynamics, enabling rapid scaling to support growing enterprise customer base. Contributed to architecture design for the new cloud-native platform implementation.",
+        "results": "Results",
+        "highlight": "Improved deployment frequency by 300%, reduced lead time by 60%"
+      },
+      "inThePocket": {
+        "description": "Led cross-functional agile teams delivering innovative digital solutions for Fortune 500 clients, consistently delivering projects on time and under budget. Served as Architect for banking and aerospace solutions, designing secure and scalable cloud infrastructures for mission-critical applications.",
+        "businessImpact": "Business Impact",
+        "highlight": "Managed €2M+ project portfolio with 98% client satisfaction rate"
+      },
+      "unleashedLead": {
+        "description": "Scaled development organization from 8 to 22 engineers across three product lines (Mobile Vikings, JIM Mobile, Stievie).",
+        "scale": "Scale",
+        "highlight": "175% team growth, established DevOps practices across multiple brands"
+      }
+    },
+    "earlyCareer": {
+      "title": "Early Career & Technical Foundation",
+      "frontendApiLead": {
+        "description": "Led technical migration to new backend architecture, aligning business requirements with technical implementation across multiple product teams.",
+        "technicalLeadership": "Technical Leadership",
+        "highlight": "Architected API strategy for 3 mobile brands"
+      },
+      "mobileAppLead": {
+        "description": "Built and led mobile development team, driving innovation in the telecom app space with focus on user experience and technical excellence.",
+        "innovation": "Innovation",
+        "highlight": "Pioneered mobile-first customer experience in telecom"
+      },
+      "mobileAppDev": {
+        "description": "Cross-platform mobile developer specializing in Windows Phone/UWP (C#), with contributions to Android (Java) and iOS (Objective-C) applications."
+      },
+      "supportEngineer": {
+        "description": "Evolved from customer support to infrastructure management, gaining expertise in Azure cloud services and establishing DevOps foundations.",
+        "cloudPioneer": "Cloud Pioneer",
+        "highlight": "Early Azure adopter, built scalable digital publishing platform"
+      }
+    },
+    "craftsmanship": {
+      "title": "Craftsmanship Foundation",
+      "subtitle": "My precision and attention to detail in software engineering stems from years of luxury watchmaking craftsmanship.",
+      "workshopManager": {
+        "title": "Workshop Manager & Watchmaker",
+        "description": "Managed luxury watch service center for Omega, Tag Heuer, and Rado. Developed leadership and quality management skills."
+      },
+      "certifiedWatchmaker": {
+        "title": "Certified Watchmaker",
+        "description": "Certified specialist for Jaeger LeCoultre and Panerai. Mastered precision work under strict quality standards."
+      },
+      "watchmakerTrainer": {
+        "title": "Watchmaker & Trainer",
+        "description": "Specialized in Cartier, Baume & Mercier, and Montblanc. Led training programs, developing early teaching and mentorship skills."
+      }
+    },
+    "skills": {
+      "leadership": {
+        "title": "Leadership Skills",
+        "teamLeadership": "Team Leadership",
+        "publicSpeaking": "Public Speaking",
+        "strategicPlanning": "Strategic Planning"
+      },
+      "technical": {
+        "title": "Technical Stack"
+      },
+      "languages": {
+        "title": "Languages"
+      }
+    }
+  }
+}

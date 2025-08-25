@@ -48,12 +48,18 @@
     <div class="resume-wrapper">
       <!-- header -->
       <header>
+        <!-- Language Selector -->
+        <div class="language-selector">
+          <button onclick="switchLanguage('en')" id="lang-en" class="active">EN</button>
+          <button onclick="switchLanguage('nl')" id="lang-nl">NL</button>
+        </div>
+        
         <div class="profile-picture">
           <img src="./assets/img/profile.jpg" alt="Jan De Dobbeleer" />
         </div>
         <div class="header-content">
           <h2 class="name-container">Jan De Dobbeleer</h2>
-          <h3 class="job-container">Engineering Leader & Open Source Innovator</h3>
+          <h3 class="job-container" data-i18n="header.jobTitle">Engineering Leader & Open Source Innovator</h3>
           <div class="contact-container">
             <ul class="contact-list">
               <li>
@@ -102,7 +108,7 @@
           <!-- achievements -->
           <section class="resume-item project">
             <div class="inner">
-              <h2>Key Achievements</h2>
+              <h2 data-i18n="sections.achievements.title">Key Achievements</h2>
               <ul>
                 <li>
                   <h3>
@@ -110,36 +116,40 @@
                       >Oh My Posh - 20k+ GitHub Stars</a
                     >
                   </h3>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.achievements.ohMyPosh.description">
                     Built the world's most popular cross-platform prompt theme engine, transforming how millions of developers interact with their terminals. Featured in Microsoft keynotes and used by developers globally.
                   </p>
                   <div class="highlight">
-                    🚀 <strong>Impact:</strong> 20,000+ stars, 1M+ downloads monthly, featured in Microsoft events
+                    🚀 <strong data-i18n="sections.achievements.ohMyPosh.impact">Impact</strong>: 20,000+ stars, 1M+ downloads monthly, featured in Microsoft events
                   </div>
                   <ul class="bullets">
                     <li>
                       <a
                         href="https://www.youtube.com/watch?v=uO_F5W2LbSk&list=PLI_J2v67C23aWi2tTkJGNDTXUgnU0I6Rx&index=8"
                         target="_blank"
-                        >Featured in Windows Wednesday - Microsoft Official Channel</a>
+                        data-i18n="sections.achievements.ohMyPosh.bullets.windowsWednesday"
+                      >Featured in Windows Wednesday - Microsoft Official Channel</a>
                     </li>
                     <li>
                       <a
                         href="https://www.hanselminutes.com/822/building-oh-my-posh-with-jan-de-dobbeleer"
                         target="_blank"
-                        >Guest on Hanselminutes Podcast</a>
+                        data-i18n="sections.achievements.ohMyPosh.bullets.hanselminutes"
+                      >Guest on Hanselminutes Podcast</a>
                     </li>
                     <li>
                       <a
                         href="https://www.youtube.com/watch?v=_meKUIm9NwA"
                         target="_blank"
-                        >Live coding session with Microsoft Principal Engineers</a>
+                        data-i18n="sections.achievements.ohMyPosh.bullets.liveCoding"
+                      >Live coding session with Microsoft Principal Engineers</a>
                     </li>
                     <li>
                       <a
                         href="https://blogs.windows.com/windowsdeveloper/2024/11/01/announcing-the-microsoft-store-awards-2024-winners/"
                         target="_blank"
-                        >Winner of Microsoft Store Award 2024 - Developer Tools category</a>
+                        data-i18n="sections.achievements.ohMyPosh.bullets.microsoftStoreAward"
+                      >Winner of Microsoft Store Award 2024 - Developer Tools category</a>
                     </li>
                   </ul>
                   <p class="tags">#opensource #go #powershell #terminal #microsoft</p>
@@ -152,11 +162,12 @@
                       >GitHub Star Program</a
                     >
                   </h3>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.achievements.githubStar.description">
                     Recognized by GitHub as a GitHub Star for exceptional contributions to the open source community and developer ecosystem.
                   </p>
                   <div class="highlight">
-                    🌟 <strong>Recognition:</strong> One of 150 developers worldwide in the GitHub Stars program
+                    🌟 <strong data-i18n="sections.achievements.githubStar.recognition">Recognition</strong>:
+                    <span data-i18n="sections.achievements.githubStar.highlight">One of 150 developers worldwide in the GitHub Stars program</span>
                   </div>
                   <p class="tags">#opensource #community #github #leadership</p>
                 </li>
@@ -168,19 +179,23 @@
                       >Microsoft MVP</a
                     >
                   </h3>
-                  <p class="detail">Awarded Microsoft Most Valuable Professional for contributions to the developer community and cloud technologies.</p>
+                  <p class="detail" data-i18n="sections.achievements.microsoftMvp.description">Awarded Microsoft Most Valuable Professional for contributions to the developer community and cloud technologies.</p>
                   <div class="highlight">
-                    🏆 <strong>Achievement:</strong> Recognized by Microsoft for technical expertise and community impact
+                    🏆 <strong data-i18n="sections.achievements.microsoftMvp.achievement">Achievement</strong>:
+                    <span data-i18n="sections.achievements.microsoftMvp.highlight">Recognized by Microsoft for technical expertise and community impact</span>
                   </div>
                   <p class="tags">#microsoft #mvp #cloud #community</p>
                 </li>
                 <li>
-                  <h3>Engineering Thought Leadership</h3>
-                  <p class="detail">
-                    Delivering internal and external workshops on Agile, DevOps, and engineering practices to scale delivery and improve lead times. Sharing expertise across organizations to drive engineering excellence and transformation.
+                  <h3 data-i18n="sections.achievements.thoughtLeadership.title">
+                    Engineering Thought Leadership
+                  </h3>
+                  <p class="detail" data-i18n="sections.achievements.thoughtLeadership.description">
+                    Delivering internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times. Sharing expertise across organizations to drive engineering excellence and transformation.
                   </p>
                   <div class="highlight">
-                    🎯 <strong>Impact:</strong> Enabling teams and organizations to accelerate delivery and improve engineering practices
+                    🎯 <strong data-i18n="sections.achievements.thoughtLeadership.impact">Impact</strong>:
+                    <span data-i18n="sections.achievements.thoughtLeadership.highlight">Enabling teams and organizations to accelerate delivery and improve engineering practices</span>
                   </div>
                   <p class="tags">#agile #devops #workshops #leadership #transformation</p>
                 </li>
@@ -192,61 +207,74 @@
           <!-- experince -->
           <section class="resume-item experience">
             <div class="inner">
-              <h2>Leadership Experience</h2>
+              <h2 data-i18n="sections.leadership.title">Leadership Experience</h2>
               <ul>
                 <li>
                   <h3>Engineering Manager</h3>
                   <h4 class="company">NIKE</h4>
                   <span class="date">June 2022 - Present</span>
-                  <p class="detail">
-                      Leading multiple high-performing engineering teams delivering critical platform services for Nike EMEA, supporting millions of customers across Europe. Acted as Delivery Manager for software and third-party vendor solutions, ensuring seamless integration and successful delivery across internal and external teams. Regularly conduct internal and external workshops on Agile, DevOps, and engineering practices to scale delivery and improve lead times across the organization.
+                  <p class="detail" data-i18n="sections.leadership.nike.description">
+                    Leading multiple high-performing engineering teams delivering critical platform services for Nike EMEA, supporting millions of customers across Europe. Acted as Delivery Manager for software and third-party vendor solutions, ensuring seamless integration and successful delivery across internal and external teams. Regularly conduct internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times across the organization.
                   </p>
                   <div class="highlight">
-                    💼 <strong>Impact:</strong> Managing 70+ engineers across 5 teams, driving digital transformation initiatives
+                    💼 <strong data-i18n="sections.leadership.nike.impact">Impact</strong>:
+                    <span data-i18n="sections.leadership.nike.highlight">Managing 70+ engineers across 5 teams, driving digital transformation initiatives</span>
                   </div>
                 </li>
                 <li>
                   <h3>Chief Technology Officer</h3>
                   <h4 class="company">TrendMiner (Software AG)</h4>
                   <span class="date">April 2021 - June 2022</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.leadership.trendminerCto.description">
                     Scaled engineering organization and drove cloud transformation strategy as CTO following successful acquisition by Software AG. Served as Cloud Architect for the design of the new cloud-native implementation, modernizing the platform architecture for enterprise-scale deployment.
                   </p>
                   <div class="highlight">
-                    🚀 <strong>Achievement:</strong> Led post-acquisition integration and modernization of enterprise software stack
+                    🚀 <strong data-i18n="sections.leadership.trendminerCto.achievement">
+                      Achievement
+                    </strong>:
+                    <span data-i18n="sections.leadership.trendminerCto.highlight">Led post-acquisition integration and modernization of enterprise software stack</span>
                   </div>
                 </li>
                 <li>
                   <h3>Engineering Manager</h3>
                   <h4 class="company">TrendMiner</h4>
                   <span class="date">January 2021 - March 2021</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.leadership.trendminerEm.description">
                     Transformed engineering practices and team dynamics, enabling rapid scaling to support growing enterprise customer base. Contributed to architecture design for the new cloud-native platform implementation.
                   </p>
                   <div class="highlight">
-                    📈 <strong>Results:</strong> Improved deployment frequency by 300%, reduced lead time by 60%
+                    📈 <strong data-i18n="sections.leadership.trendminerEm.results">
+                      Results
+                    </strong>:
+                    <span data-i18n="sections.leadership.trendminerEm.highlight">Improved deployment frequency by 300%, reduced lead time by 60%</span>
                   </div>
                 </li>
                 <li>
                   <h3>Team Lead</h3>
                   <h4 class="company">In The Pocket</h4>
                   <span class="date">September 2018 - December 2020</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.leadership.inThePocket.description">
                     Led cross-functional agile teams delivering innovative digital solutions for Fortune 500 clients, consistently delivering projects on time and under budget. Served as Architect for banking and aerospace solutions, designing secure and scalable cloud infrastructures for mission-critical applications.
                   </p>
                   <div class="highlight">
-                    💰 <strong>Business Impact:</strong> Managed €2M+ project portfolio with 98% client satisfaction rate
+                    💰 <strong data-i18n="sections.leadership.inThePocket.businessImpact">
+                      Business Impact
+                    </strong>:
+                    <span data-i18n="sections.leadership.inThePocket.highlight">Managed €2M+ project portfolio with 98% client satisfaction rate</span>
                   </div>
                 </li>
                 <li>
                   <h3>Software Development Lead</h3>
                   <h4 class="company">Unleashed</h4>
                   <span class="date">January 2018 - September 2018</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.leadership.unleashedLead.description">
                     Scaled development organization from 8 to 22 engineers across three product lines (Mobile Vikings, JIM Mobile, Stievie).
                   </p>
                   <div class="highlight">
-                    📊 <strong>Scale:</strong> 175% team growth, established DevOps practices across multiple brands
+                    📊 <strong data-i18n="sections.leadership.unleashedLead.scale">
+                      Scale
+                    </strong>:
+                    <span data-i18n="sections.leadership.unleashedLead.highlight">175% team growth, established DevOps practices across multiple brands</span>
                   </div>
                 </li>
               </ul>
@@ -257,35 +285,43 @@
           <!-- past experience -->
           <section class="resume-item experience">
             <div class="inner">
-              <h2>Early Career & Technical Foundation</h2>
+              <h2 data-i18n="sections.earlyCareer.title">
+                Early Career & Technical Foundation
+              </h2>
               <ul>
                 <li>
                   <h3>Frontend and API Lead</h3>
                   <h4 class="company">Unleashed</h4>
                   <span class="date">Feb 2017 - December 2017</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.earlyCareer.frontendApiLead.description">
                     Led technical migration to new backend architecture, aligning business requirements with technical implementation across multiple product teams.
                   </p>
                   <div class="highlight">
-                    🔧 <strong>Technical Leadership:</strong> Architected API strategy for 3 mobile brands
+                    🔧 <strong data-i18n="sections.earlyCareer.frontendApiLead.technicalLeadership">
+                      Technical Leadership
+                    </strong>:
+                    <span data-i18n="sections.earlyCareer.frontendApiLead.highlight">Architected API strategy for 3 mobile brands</span>
                   </div>
                 </li>
                 <li>
                   <h3>Mobile App Lead</h3>
                   <h4 class="company">Unleashed (Mobile Vikings)</h4>
                   <span class="date">May 2015 - Jan 2017</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.earlyCareer.mobileAppLead.description">
                     Built and led mobile development team, driving innovation in the telecom app space with focus on user experience and technical excellence.
                   </p>
                   <div class="highlight">
-                    📱 <strong>Innovation:</strong> Pioneered mobile-first customer experience in telecom
+                    📱 <strong data-i18n="sections.earlyCareer.mobileAppLead.innovation">
+                      Innovation
+                    </strong>:
+                    <span data-i18n="sections.earlyCareer.mobileAppLead.highlight">Pioneered mobile-first customer experience in telecom</span>
                   </div>
                 </li>
                 <li>
                   <h3>Mobile App Developer</h3>
                   <h4 class="company">Unleashed</h4>
                   <span class="date">Oct 2014 - Aug 2016</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.earlyCareer.mobileAppDev.description">
                     Cross-platform mobile developer specializing in Windows Phone/UWP (C#), with contributions to Android (Java) and iOS (Objective-C) applications.
                   </p>
                 </li>
@@ -293,11 +329,14 @@
                   <h3>Support Engineer → DevOps</h3>
                   <h4 class="company">Twipe</h4>
                   <span class="date">Apr 2013 - Oct 2014</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.earlyCareer.supportEngineer.description">
                     Evolved from customer support to infrastructure management, gaining expertise in Azure cloud services and establishing DevOps foundations.
                   </p>
                   <div class="highlight">
-                    ☁️ <strong>Cloud Pioneer:</strong> Early Azure adopter, built scalable digital publishing platform
+                    ☁️ <strong data-i18n="sections.earlyCareer.supportEngineer.cloudPioneer">
+                      Cloud Pioneer
+                    </strong>:
+                    <span data-i18n="sections.earlyCareer.supportEngineer.highlight">Early Azure adopter, built scalable digital publishing platform</span>
                   </div>
                 </li>
               </ul>
@@ -308,32 +347,40 @@
           <!-- craftsmanship background -->
           <section class="resume-item experience">
             <div class="inner">
-              <h2>Craftsmanship Foundation</h2>
-              <p style="font-style: italic; color: #3a6e80; margin-bottom: 20px;">
+              <h2 data-i18n="sections.craftsmanship.title">
+                Craftsmanship Foundation
+              </h2>
+              <p style="font-style: italic; color: #3a6e80; margin-bottom: 20px;" data-i18n="sections.craftsmanship.subtitle">
                 My precision and attention to detail in software engineering stems from years of luxury watchmaking craftsmanship.
               </p>
               <ul>
                 <li>
-                  <h3>Workshop Manager & Watchmaker</h3>
+                  <h3 data-i18n="sections.craftsmanship.workshopManager.title">
+                    Workshop Manager & Watchmaker
+                  </h3>
                   <h4 class="company">Sunny Europe</h4>
                   <span class="date">January 2012 - April 2013</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.craftsmanship.workshopManager.description">
                     Managed luxury watch service center for Omega, Tag Heuer, and Rado. Developed leadership and quality management skills.
                   </p>
                 </li>
                 <li>
-                  <h3>Certified Watchmaker</h3>
+                  <h3 data-i18n="sections.craftsmanship.certifiedWatchmaker.title">
+                    Certified Watchmaker
+                  </h3>
                   <h4 class="company">Slaets</h4>
                   <span class="date">March 2009 - January 2012</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.craftsmanship.certifiedWatchmaker.description">
                     Certified specialist for Jaeger LeCoultre and Panerai. Mastered precision work under strict quality standards.
                   </p>
                 </li>
                 <li>
-                  <h3>Watchmaker & Trainer</h3>
+                  <h3 data-i18n="sections.craftsmanship.watchmakerTrainer.title">
+                    Watchmaker & Trainer
+                  </h3>
                   <h4 class="company">Richemont Luxury Group</h4>
                   <span class="date">May 2007 - March 2009</span>
-                  <p class="detail">
+                  <p class="detail" data-i18n="sections.craftsmanship.watchmakerTrainer.description">
                     Specialized in Cartier, Baume & Mercier, and Montblanc. Led training programs, developing early teaching and mentorship skills.
                   </p>
                 </li>
@@ -349,10 +396,10 @@
           <!-- skills -->
           <section class="resume-item skill">
             <div class="inner">
-              <h2>Leadership Skills</h2>
+              <h2 data-i18n="sections.skills.leadership.title">Leadership Skills</h2>
               <ul>
                 <li>
-                  <h3>Team Leadership</h3>
+                  <h3 data-i18n="sections.skills.leadership.teamLeadership">Team Leadership</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 95%"></span>
                   </div>
@@ -370,13 +417,13 @@
                   </div>
                 </li>
                 <li>
-                  <h3>Public Speaking</h3>
+                  <h3 data-i18n="sections.skills.leadership.publicSpeaking">Public Speaking</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 70%"></span>
                   </div>
                 </li>
                 <li>
-                  <h3>Strategic Planning</h3>
+                  <h3 data-i18n="sections.skills.leadership.strategicPlanning">Strategic Planning</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 85%"></span>
                   </div>
@@ -389,7 +436,7 @@
           <!-- technical -->
           <section class="resume-item skill">
             <div class="inner">
-              <h2>Technical Stack</h2>
+              <h2 data-i18n="sections.skills.technical.title">Technical Stack</h2>
               <ul>
                 <li>
                   <h3>Go</h3>
@@ -435,28 +482,28 @@
           <!-- languages -->
           <section class="resume-item skill">
             <div class="inner">
-              <h2>Languages</h2>
+              <h2 data-i18n="sections.skills.languages.title">Languages</h2>
               <ul>
                 <li>
-                  <h3>Dutch</h3>
+                  <h3>NL</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 100%"></span>
                   </div>
                 </li>
                 <li>
-                  <h3>English</h3>
+                  <h3>EN</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 99%"></span>
                   </div>
                 </li>
                 <li>
-                  <h3>French</h3>
+                  <h3>FR</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 80%"></span>
                   </div>
                 </li>
                 <li>
-                  <h3>German</h3>
+                  <h3>DE</h3>
                   <div class="skill-bar">
                     <span class="bar" style="width: 40%"></span>
                   </div>
@@ -473,5 +520,103 @@
         <p>© 2025 Jan De Dobbeleer • Engineering Leader & Open Source Innovator • <a href="https://itdepends.be">itdepends.be</a></p>
       </footer>
     </div>
+
+    <script>
+      let currentLanguage = 'en';
+      let translations = {};
+
+      // Load translation file
+      async function loadTranslations(lang) {
+        try {
+          console.log('Loading translations for:', lang);
+          const response = await fetch(`./languages/${lang}.json`);
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          translations[lang] = data;
+          console.log('Successfully loaded translations for:', lang);
+          return data;
+        } catch (error) {
+          console.error(`Error loading ${lang} translations:`, error);
+          return null;
+        }
+      }
+
+      // Get nested translation value
+      function getTranslation(key, lang = currentLanguage) {
+        if (!translations[lang]) {
+          console.error(`Language ${lang} not found in translations`);
+          return null;
+        }
+
+        const keys = key.split('.');
+        let value = translations[lang];
+
+        for (const k of keys) {
+          if (value && typeof value === 'object' && k in value) {
+            value = value[k];
+          } else {
+            console.warn(`Translation key path '${key}' not found at '${k}' in ${lang}`);
+            return null;
+          }
+        }
+
+        return value;
+      }
+
+      // Apply translations to DOM
+      function applyTranslations(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        console.log(`Applying translations for ${lang}, found ${elements.length} elements`);
+
+        elements.forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          const translation = getTranslation(key, lang);
+
+          if (translation) {
+            element.textContent = translation;
+          } else {
+            console.warn(`No translation found for key: ${key} in language: ${lang}`);
+          }
+        });
+      }
+
+      // Switch language function
+      async function switchLanguage(lang) {
+        console.log('Switching to language:', lang);
+
+        // Load translations if not already loaded
+        if (!translations[lang]) {
+          console.log('Loading translations for:', lang);
+          await loadTranslations(lang);
+        }
+
+        currentLanguage = lang;
+        applyTranslations(lang);
+
+        // Update button states
+        document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+        document.getElementById('lang-nl').classList.toggle('active', lang === 'nl');
+
+        // Store preference
+        localStorage.setItem('preferred-language', lang);
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', async function() {
+        console.log('Page loaded, initializing translations');
+        const savedLang = localStorage.getItem('preferred-language') || 'en';
+
+        // Load initial translations
+        await loadTranslations('en');
+        await loadTranslations('nl');
+
+        // Apply saved language
+        switchLanguage(savedLang);
+      });
+    </script>
   </body>
 </html>

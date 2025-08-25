@@ -10,6 +10,44 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Language Selector */
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.language-selector button {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #3a6e80;
+}
+
+.language-selector button:hover {
+  background: rgba(58, 110, 128, 0.1);
+  border-color: #3a6e80;
+}
+
+.language-selector button.active {
+  background: #3a6e80;
+  color: white;
+  border-color: #3a6e80;
+}
+
 .resume-wrapper {
   position: relative;
   max-width: 1200px;
@@ -389,6 +427,17 @@ footer a {
     border-radius: 12px;
   }
 
+  .language-selector {
+    top: 10px;
+    right: 10px;
+    padding: 3px;
+  }
+
+  .language-selector button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
   header {
     flex-direction: column;
     text-align: center;
@@ -417,6 +466,11 @@ footer a {
 
 /* PDF Print Styles */
 @media print {
+  /* Hide language selector when printing */
+  .language-selector {
+    display: none !important;
+  }
+
   body {
     background: white !important;
     font-size: 12px;
@@ -559,6 +613,10 @@ footer a {
   }
 
   /* Hide unnecessary elements for print */
+  .language-selector {
+    display: none !important;
+  }
+
   footer {
     display: none !important;
   }
