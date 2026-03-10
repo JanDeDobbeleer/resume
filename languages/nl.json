@@ -1,6 +1,6 @@
 {
   "header": {
-    "jobTitle": "Engineering Leader & Open Source Innovator"
+    "jobTitle": "AI-Native Software Engineer & Engineering Leader"
   },
   "sections": {
     "achievements": {
@@ -35,7 +35,7 @@
     "leadership": {
       "title": "Leadership Skills",
       "nike": {
-        "description": "Leid meerdere high-performing engineering teams die kritieke platform services leveren voor Nike EMEA, ondersteunend miljoenen klanten in Europa. Fungeerde als Delivery Manager voor software en third-party vendor solutions, waarbij naadloze integratie en succesvolle ontwikkeling met interne en externe teams werd gewaarborgd. Geef regelmatig interne en externe workshops over Agile, DevOps, AI en engineering practices om delivery te schalen en lead times te verbeteren in de organisatie.",
+        "description": "Leidde meerdere high-performing engineering teams die kritieke platform services leverden voor Nike EMEA, ter ondersteuning van miljoenen klanten in Europa. Fungeerde als Delivery Manager voor software en third-party vendor solutions, waarbij naadloze integratie en succesvolle levering met interne en externe teams werd gewaarborgd. Gaf regelmatig interne en externe workshops over Agile, DevOps, AI en engineering practices om delivery te schalen en lead times te verbeteren in de organisatie.",
         "impact": "Impact",
         "highlight": "Management van 70+ engineers verdeeld over 5 teams, aansturing van digital transformation initiatieven"
       },
@@ -58,6 +58,11 @@
         "description": "Groeien van de engineering organisatie van 8 naar 22 engineers verdeeld over drie product lijnen (Mobile Vikings, JIM Mobile, Stievie).",
         "scale": "Schaal",
         "highlight": "175% team groei, implementeerde DevOps practices voor meerdere merken"
+      },
+      "kbc": {
+        "description": "Leid de GitHub platform strategie en delivery bij een van Belgie's grootste bank- en verzekeringsgroepen. Bevorder engineering excellence door verbeterde developer tooling, platform adoptie en DevOps transformatie initiatieven bij engineering teams.",
+        "impact": "Impact",
+        "highlight": "KBC engineering teams in staat stellen sneller en betrouwbaarder te leveren via GitHub platform adoptie en developer experience verbeteringen"
       }
     },
     "earlyCareer": {

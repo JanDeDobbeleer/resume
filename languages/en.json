@@ -1,6 +1,6 @@
 {
   "header": {
-    "jobTitle": "Engineering Leader & Open Source Innovator"
+    "jobTitle": "AI-Native Software Engineer & Engineering Leader"
   },
   "sections": {
     "achievements": {
@@ -35,9 +35,9 @@
     "leadership": {
       "title": "Leadership Experience",
       "nike": {
-        "description": "Leading multiple high-performing engineering teams delivering critical platform services for Nike EMEA, supporting millions of customers across Europe. Acted as Delivery Manager for software and third-party vendor solutions, ensuring seamless integration and successful delivery across internal and external teams. Regularly conduct internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times across the organization.",
+        "description": "Led multiple high-performing engineering teams delivering critical platform services for Nike EMEA, supporting millions of customers across Europe. Acted as Delivery Manager for software and third-party vendor solutions, ensuring seamless integration and successful delivery across internal and external teams. Regularly conducted internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times across the organization.",
         "impact": "Impact",
-        "highlight": "Managing 70+ engineers across 5 teams, driving digital transformation initiatives"
+        "highlight": "Managed 70+ engineers across 5 teams, drove digital transformation initiatives"
       },
       "trendminerCto": {
         "description": "Scaled engineering organization and drove cloud transformation strategy as CTO following successful acquisition by Software AG. Served as Cloud Architect for the design of the new cloud-native implementation, modernizing the platform architecture for enterprise-scale deployment.",
@@ -58,6 +58,11 @@
         "description": "Scaled development organization from 8 to 22 engineers across three product lines (Mobile Vikings, JIM Mobile, Stievie).",
         "scale": "Scale",
         "highlight": "175% team growth, established DevOps practices across multiple brands"
+      },
+      "kbc": {
+        "description": "Leading GitHub platform strategy and delivery at one of Belgium's largest banking and insurance groups. Driving engineering excellence through improved developer tooling, platform adoption, and DevOps transformation initiatives across engineering teams.",
+        "impact": "Impact",
+        "highlight": "Enabling KBC engineering teams to deliver faster and more reliably through GitHub platform adoption and developer experience improvements"
       }
     },
     "earlyCareer": {
