@@ -1,16 +1,38 @@
+/* ============================================================
+   CSS Custom Properties
+   ============================================================ */
+:root {
+  --primary:         #3a6e80;
+  --primary-light:   #5a8a96;
+  --primary-lighter: #e6f3f7;
+  --coral:           #d4735a;
+  --coral-light:     #e8967f;
+  --coral-lighter:   #fef3ef;
+  --text-dark:       #2c3e50;
+  --text-mid:        #4a5568;
+  --text-light:      #94a3b8;
+  --bg-subtle:       #f8fafc;
+  --border:          #e2e8f0;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
 body {
   margin: 0;
   padding: 0;
-  color: #2c3e50;
+  color: var(--text-dark);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: linear-gradient(135deg, #3a6e80 0%, #5a8a96 100%);
+  background: #f0f4f8;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Language Selector */
+/* ============================================================
+   Language Selector
+   ============================================================ */
 .language-selector {
   position: absolute;
   top: 20px;
@@ -21,7 +43,7 @@ body {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   padding: 5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
   backdrop-filter: blur(10px);
 }
 
@@ -33,50 +55,84 @@ body {
   font-weight: 600;
   font-size: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: #3a6e80;
+  transition: all 0.25s ease;
+  color: var(--primary);
+  font-family: "Inter", sans-serif;
 }
 
 .language-selector button:hover {
   background: rgba(58, 110, 128, 0.1);
-  border-color: #3a6e80;
+  border-color: var(--primary);
 }
 
 .language-selector button.active {
-  background: #3a6e80;
+  background: var(--primary);
   color: white;
-  border-color: #3a6e80;
+  border-color: var(--primary);
 }
 
+/* ============================================================
+   Resume Wrapper
+   ============================================================ */
 .resume-wrapper {
   position: relative;
-  max-width: 1200px;
-  margin: 40px auto 80px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 1280px;
+  margin: 48px auto 96px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18), 0 8px 20px rgba(0, 0, 0, 0.08);
   background: #fff;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
 }
 
-/* header */
-
+/* ============================================================
+   Header
+   ============================================================ */
 header {
   position: relative;
-  background: linear-gradient(135deg, #3a6e80 0%, #5a8a96 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: white;
-  padding: 60px 40px 40px;
+  padding: 80px 60px 60px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
+  overflow: hidden;
+}
+
+/* Subtle geometric circles for depth */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  right: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 45px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: 180px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 35px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
 }
 
 header .profile-picture {
   flex-shrink: 0;
-  width: 150px;
-  height: 150px;
+  width: 155px;
+  height: 155px;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1;
 }
 
 header .profile-picture img {
@@ -88,14 +144,16 @@ header .profile-picture img {
 
 header .header-content {
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 header .name-container {
   font-size: 3.5rem;
   font-weight: 700;
   font-family: "Space Grotesk", "Inter", sans-serif;
-  margin: 0 0 10px 0;
-  background: linear-gradient(45deg, #fff, #f0f8ff);
+  margin: 0 0 8px 0;
+  background: linear-gradient(45deg, #fff, #d4f0f8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -103,12 +161,12 @@ header .name-container {
 }
 
 header .job-container {
-  font-size: 1.5rem;
-  margin: 0 0 30px 0;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin: 0 0 28px 0;
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 header .contact-container {
@@ -118,65 +176,73 @@ header .contact-container {
 header .contact-container .contact-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 10px;
 }
 
 header .contact-container .contact-list li {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   height: auto;
-  padding: 8px 16px 8px 35px;
-  background: rgba(255, 255, 255, 0.1);
+  padding: 7px 16px;
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 25px;
   color: white;
-  font-size: 14px;
-  transition: all 0.3s ease;
+  font-size: 13px;
+  transition: all 0.25s ease;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 header .contact-container .contact-list li:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
 }
 
 header .contact-container .contact-list li span {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   text-align: center;
-  line-height: 20px;
+  line-height: 16px;
+  font-size: 13px;
+  opacity: 0.85;
+  flex-shrink: 0;
 }
 
-/* main */
-
+/* ============================================================
+   Main Layout
+   ============================================================ */
 #main {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 40px;
-  padding: 40px;
+  grid-template-columns: 1fr 310px;
+  gap: 48px;
+  padding: 56px 56px 64px;
+  background: #f0f4f8;
 }
 
 #main > .resume-item-wrapper {
   position: relative;
   display: grid;
-  gap: 40px;
+  gap: 36px;
 }
 
+/* ============================================================
+   Resume Item Cards
+   ============================================================ */
 #main .resume-item {
   position: relative;
   background: #fff;
-  border-radius: 12px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.8);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #main .resume-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -185,96 +251,140 @@ header .contact-container .contact-list li span {
   border-bottom: none;
 }
 
+/* Section titles */
 #main .resume-item h2 {
   position: relative;
-  top: 0;
-  right: 0;
-  width: auto;
-  height: auto;
-  padding: 0 0 20px 0;
-  font-size: 2rem;
+  padding: 0 0 16px 0;
+  font-size: 1.45rem;
   text-align: left;
   text-transform: capitalize;
-  color: #2c3e50;
-  border-bottom: 3px solid #3a6e80;
-  margin-bottom: 25px;
-  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  font-weight: 700;
   font-family: "Space Grotesk", "Inter", sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+
+/* Gradient underline */
+#main .resume-item h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 40%, transparent 100%);
+}
+
+/* Small accent square before title */
+#main .resume-item h2::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 2px;
+  margin-right: 10px;
+  vertical-align: middle;
+  margin-bottom: 3px;
 }
 
 #main ul li {
   position: relative;
-  margin: 0 0 25px;
+  margin: 0 0 36px;
 }
 
-/* experience */
+/* ============================================================
+   Experience
+   ============================================================ */
+.experience ul {
+  position: relative;
+}
 
 .experience h3 {
-  font-size: 1.4rem;
-  color: #2c3e50;
-  margin-bottom: 8px;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.01em;
+  padding-right: 145px;
 }
 
 .experience .company {
   margin: 0 0 8px;
-  color: #3a6e80;
-  font-size: 1.1rem;
+  color: var(--coral);
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .experience .date {
   position: absolute;
   top: 0;
   right: 0;
-  background: linear-gradient(135deg, #3a6e80, #5a8a96);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
-  font-size: 12px;
-  padding: 4px 12px;
+  font-size: 11px;
+  padding: 4px 11px;
   border-radius: 15px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .experience .detail {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #4a5568;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-mid);
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  margin-top: 8px;
 }
 
+/* Highlight boxes  teal for odd, coral for even */
 .experience .highlight {
-  background: linear-gradient(135deg, #f0f8ff, #e6f3f7);
-  padding: 15px;
+  background: linear-gradient(135deg, var(--primary-lighter), #f0faff);
+  padding: 12px 15px;
   border-radius: 8px;
-  margin-top: 10px;
-  border-left: 4px solid #3a6e80;
-  font-weight: 500;
+  margin-top: 12px;
+  border-left: 3px solid var(--primary);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 1.55;
 }
 
-/* project */
+.experience ul li:nth-child(even) .highlight {
+  background: linear-gradient(135deg, var(--coral-lighter), #fff7f5);
+  border-left-color: var(--coral);
+}
 
+/* ============================================================
+   Project / Achievements
+   ============================================================ */
 .project ul li {
-  font-size: 16px;
-  line-height: 1.6;
-  background: #f8f9fa;
-  padding: 20px;
+  font-size: 15px;
+  line-height: 1.65;
+  background: var(--bg-subtle);
+  padding: 20px 22px;
   border-radius: 12px;
-  border-left: 4px solid #3a6e80;
-  margin-bottom: 20px;
+  border-left: 4px solid var(--primary);
+  margin-bottom: 18px;
+}
+
+/* Alternate accent colour */
+.project ul li:nth-child(even) {
+  border-left-color: var(--coral);
 }
 
 .project h3 {
   position: relative;
   display: block;
-  color: #2c3e50;
-  font-size: 1.3rem;
+  color: var(--text-dark);
+  font-size: 1.1rem;
   font-weight: 600;
   font-family: "Inter", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
 
@@ -284,146 +394,171 @@ header .contact-container .contact-list li span {
 
 .project .detail {
   display: block;
-  font-size: 15px;
-  color: #4a5568;
-  margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-bottom: 12px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .project .tags {
-  font-size: 12px;
-  color: #3a6e80;
+  font-size: 11.5px;
+  color: var(--primary);
   background: rgba(58, 110, 128, 0.1);
-  padding: 4px 8px;
+  padding: 3px 10px;
   border-radius: 12px;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 8px;
   font-weight: 500;
 }
 
+.project ul li:nth-child(even) .tags {
+  color: var(--coral);
+  background: rgba(212, 115, 90, 0.1);
+}
+
 .project .bullets {
-  margin: 15px 0 0 0;
+  margin: 12px 0 0 0;
   background: white;
-  padding: 15px;
+  padding: 12px 15px;
   border-radius: 8px;
 }
 
+/* Reset bullet items  override parent project li styles */
 .project .bullets li {
-  list-style: none;
-  font-size: 14px;
-  color: #4a5568;
-  padding: 5px 0 5px 20px;
-  position: relative;
+  list-style: none !important;
+  font-size: 13px !important;
+  color: var(--text-mid) !important;
+  padding: 4px 0 4px 20px !important;
+  position: relative !important;
+  border-left: none !important;
+  background: none !important;
+  border-radius: 0 !important;
+  margin-bottom: 4px !important;
 }
 
 .project .bullets li::before {
-  content: "→";
+  content: "";
   position: absolute;
   left: 0;
-  color: #3a6e80;
+  color: var(--primary);
   font-weight: bold;
 }
 
-/* end */
-
-.end {
-  margin-bottom: 0 !important;
-}
-
-/* skill */
-
+/* ============================================================
+   Skills
+   ============================================================ */
 .skill ul li {
-  height: 50px;
-  background: #f8f9fa;
-  border-radius: 25px;
-  padding: 15px 20px;
-  margin-bottom: 15px;
+  height: auto;
+  min-height: 46px;
+  background: var(--bg-subtle);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  gap: 12px;
+  transition: transform 0.2s ease;
 }
 
 .skill ul li:hover {
-  transform: scale(1.02);
+  transform: scale(1.015);
 }
 
 .skill h3 {
   float: none;
-  width: 40%;
+  width: 42%;
+  flex-shrink: 0;
   height: auto;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1;
-  color: #2c3e50;
+  color: var(--text-dark);
   font-family: "Inter", sans-serif;
 }
 
 .skill .skill-bar {
   float: none;
-  width: 60%;
-  height: 8px;
+  flex: 1;
+  height: 7px;
   background: #e2e8f0;
   border-radius: 4px;
   overflow: hidden;
   position: relative;
 }
 
+/* Teal  coral gradient skill bars */
 .skill .skill-bar .bar {
   display: block;
   height: 100%;
-  background: linear-gradient(135deg, #3a6e80, #5a8a96);
+  background: linear-gradient(90deg, var(--primary), var(--coral));
   border-radius: 4px;
   position: relative;
-  animation: fillBar 2s ease-in-out;
+  animation: fillBar 1.5s ease-out;
 }
 
 @keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--bar-width, 60%); }
+  from { width: 0 !important; }
 }
 
-/* Sidebar styles */
+/* ============================================================
+   Sidebar
+   ============================================================ */
 .sidebar {
   position: sticky;
   top: 40px;
   height: fit-content;
+  display: grid;
+  gap: 28px;
 }
 
 .sidebar .resume-item {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
-/* footer */
-
+/* ============================================================
+   Footer
+   ============================================================ */
 footer {
   position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px 40px;
+  padding: 22px 40px;
   font-size: 12px;
   text-align: center;
-  color: #94a3b8;
-  background: #f8f9fa;
-  border-top: 1px solid #e2e8f0;
+  color: var(--text-light);
+  background: white;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, var(--primary) 0%, var(--coral) 100%) 1;
 }
 
 footer a {
   font-weight: bold;
-  color: #3a6e80;
+  color: var(--primary);
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--coral);
+}
+
+/* ============================================================
+   Misc
+   ============================================================ */
+.end {
+  margin-bottom: 0 !important;
 }
 
 #main .bullets li {
-    margin-bottom: 8px;
-    margin-top: 3px;
+  margin-bottom: 8px;
+  margin-top: 3px;
 }
 
-/* Responsive design */
+/* ============================================================
+   Responsive
+   ============================================================ */
 @media (max-width: 768px) {
   .resume-wrapper {
-    margin: 20px;
+    margin: 16px;
     border-radius: 12px;
   }
 
@@ -441,7 +576,7 @@ footer a {
   header {
     flex-direction: column;
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 24px 36px;
   }
 
   header .name-container {
@@ -454,7 +589,12 @@ footer a {
 
   #main {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .experience h3 {
+    padding-right: 0;
   }
 
   .experience .date {
@@ -464,9 +604,10 @@ footer a {
   }
 }
 
-/* PDF Print Styles */
+/* ============================================================
+   Print Styles   preserved from original
+   ============================================================ */
 @media print {
-  /* Hide language selector when printing */
   .language-selector {
     display: none !important;
   }
@@ -493,6 +634,11 @@ footer a {
     page-break-after: avoid;
   }
 
+  header::before,
+  header::after {
+    display: none !important;
+  }
+
   header .profile-picture {
     width: 100px !important;
     height: 100px !important;
@@ -511,6 +657,7 @@ footer a {
     display: block !important;
     grid-template-columns: none !important;
     gap: 0 !important;
+    background: white !important;
   }
 
   #main > .resume-item-wrapper {
@@ -565,10 +712,6 @@ footer a {
     margin-bottom: 15px !important;
   }
 
-  .experience .job-title {
-    font-size: 13px !important;
-  }
-
   .experience .company {
     font-size: 12px !important;
   }
@@ -583,13 +726,6 @@ footer a {
     page-break-inside: avoid;
   }
 
-  .sidebar {
-    position: static !important;
-    width: 100% !important;
-    margin-top: 20px !important;
-    page-break-before: auto !important;
-  }
-
   .sidebar .resume-item {
     display: inline-block !important;
     width: calc(33.333% - 10px) !important;
@@ -602,26 +738,18 @@ footer a {
     margin-right: 0 !important;
   }
 
-  /* Force page breaks before major sections */
   .resume-item:nth-child(3) {
     page-break-before: page;
   }
 
-  /* Avoid orphaned content */
   .resume-item:last-child {
     page-break-inside: avoid;
-  }
-
-  /* Hide unnecessary elements for print */
-  .language-selector {
-    display: none !important;
   }
 
   footer {
     display: none !important;
   }
 
-  /* Ensure proper spacing */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
