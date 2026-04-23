@@ -1,18 +1,93 @@
 /* ============================================================
-   CSS Custom Properties
+   Design Tokens  "The Precision Architect" (DESIGN.md)
    ============================================================ */
 :root {
-  --primary:         #3a6e80;
-  --primary-light:   #5a8a96;
-  --primary-lighter: #e6f3f7;
-  --coral:           #d4735a;
-  --coral-light:     #e8967f;
-  --coral-lighter:   #fef3ef;
-  --text-dark:       #2c3e50;
-  --text-mid:        #4a5568;
-  --text-light:      #94a3b8;
-  --bg-subtle:       #f8fafc;
-  --border:          #e2e8f0;
+  /* Brand */
+  --primary:                #1e5667;
+  --primary-container:      #3a6e80;
+  --primary-fixed-dim:      #2b7082;
+  --on-primary:             #ffffff;
+  --tertiary:               #235661;
+
+  /* Surface Stack */
+  --surface-lowest:         #ffffff;
+  --surface:                #f7f9ff;
+  --surface-low:            #edf4ff;
+  --surface-container:      #deeaf5;
+  --surface-high:           #cddcea;
+  --surface-highest:        #bdd0e0;
+
+  /* Content */
+  --on-surface:             #091d2e;
+  --on-surface-variant:     #3a4a55;
+  --inverse-surface:        #203243;
+
+  /* Secondary */
+  --secondary-container:    #cfe2f9;
+  --on-secondary-container: #0d3054;
+
+  /* Borders */
+  --outline-variant:        #c0c8cc;
+  --outline:                #8a9ba5;
+}
+
+/* ============================================================
+   Keyframes
+   ============================================================ */
+
+/* Animated gradient  12s breathe */
+@keyframes gradientBreathe {
+  0%,  100% { background-position: 0%   50%; }
+  50%        { background-position: 100% 50%; }
+}
+
+/* Engineering grid drift  24px tile, 20s loop */
+@keyframes gridDrift {
+  from { background-position: 0 0; }
+  to   { background-position: 24px 24px; }
+}
+
+/* Profile photo float  7s ease-in-out */
+@keyframes floatPhoto {
+  0%,  100% { transform: translateY(0); }
+  50%        { transform: translateY(-8px); }
+}
+
+/* Skill bar fill */
+@keyframes fillBar {
+  from { width: 0 !important; }
+}
+
+/* ============================================================
+   Accessibility  Reduced Motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   Scroll Reveal (IntersectionObserver adds .is-visible)
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity  0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================================
@@ -21,9 +96,9 @@
 body {
   margin: 0;
   padding: 0;
-  color: var(--text-dark);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #f0f4f8;
+  color: var(--on-surface);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--surface);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,44 +106,45 @@ body {
 }
 
 /* ============================================================
-   Language Selector
+   Language Selector  Glassmorphism
+   surface_container_highest at 70% opacity, 20px backdrop-blur
    ============================================================ */
 .language-selector {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 24px;
+  right: 24px;
   z-index: 10;
   display: flex;
-  gap: 5px;
-  background: rgba(255, 255, 255, 0.95);
+  gap: 4px;
+  background: rgba(189, 208, 224, 0.70);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 8px;
-  padding: 5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(10px);
+  padding: 4px;
 }
 
 .language-selector button {
   background: transparent;
-  border: 1px solid transparent;
-  padding: 8px 12px;
+  border: none;
+  padding: 7px 14px;
   border-radius: 6px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.25s ease;
-  color: var(--primary);
+  transition: background 0.15s ease, color 0.15s ease;
+  color: var(--on-primary);
   font-family: "Inter", sans-serif;
 }
 
 .language-selector button:hover {
-  background: rgba(58, 110, 128, 0.1);
-  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .language-selector button.active {
   background: var(--primary);
-  color: white;
-  border-color: var(--primary);
+  color: var(--on-primary);
 }
 
 /* ============================================================
@@ -78,61 +154,90 @@ body {
   position: relative;
   max-width: 1280px;
   margin: 48px auto 96px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18), 0 8px 20px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  /* Ambient shadow: 3264px blur, 6% opacity, tinted  never pure black */
+  box-shadow:
+    0 64px 64px rgba(9, 29, 46, 0.06),
+    0 16px 32px rgba(9, 29, 46, 0.06);
+  background: var(--surface-lowest);
   border-radius: 20px;
   overflow: hidden;
 }
 
 /* ============================================================
-   Header
+   Header  Precision Architect Hero
    ============================================================ */
 header {
   position: relative;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: white;
-  padding: 80px 60px 60px;
+  /* Signature animated multi-stop gradient */
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-container),
+    var(--primary-fixed-dim),
+    var(--tertiary)
+  );
+  background-size: 300% 300%;
+  animation: gradientBreathe 12s ease infinite;
+  color: var(--on-primary);
+  padding: 80px 60px 64px;
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 56px;
   overflow: hidden;
 }
 
-/* Subtle geometric circles for depth */
-header::after {
-  content: '';
-  position: absolute;
-  bottom: -70px;
-  right: -70px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 45px solid rgba(255, 255, 255, 0.06);
-  pointer-events: none;
-}
-
+/* Engineering Grid Overlay  outline_variant at 5%, drifts 24px on 20s loop */
 header::before {
   content: '';
   position: absolute;
-  top: -50px;
-  right: 180px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 35px solid rgba(255, 255, 255, 0.04);
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      rgba(192, 200, 204, 0.05) 0px 1px,
+      transparent 1px 24px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(192, 200, 204, 0.05) 0px 1px,
+      transparent 1px 24px
+    );
+  background-size: 24px 24px;
+  animation: gridDrift 20s linear infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
+/* Depth ring accent  right edge */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 60px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Profile Photo */
 header .profile-picture {
   flex-shrink: 0;
-  width: 155px;
-  height: 155px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.4);
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.08);
   position: relative;
   z-index: 1;
+  /* Ambient ring  tonal, no harsh border */
+  box-shadow:
+    0 0 0 3px  rgba(255, 255, 255, 0.20),
+    0 0 0 7px  rgba(255, 255, 255, 0.07),
+    0 20px 48px rgba(9, 29, 46, 0.35);
+  /* Float: 7s ease-in-out, 1.5s delay */
+  animation: floatPhoto 7s ease-in-out 1.5s infinite;
+  animation-fill-mode: backwards;
 }
 
 header .profile-picture img {
@@ -142,33 +247,47 @@ header .profile-picture img {
   border-radius: 50%;
 }
 
+/* Header Content  intentional asymmetric right offset */
 header .header-content {
   flex: 1;
   position: relative;
   z-index: 1;
+  padding-right: 60px;
 }
 
+/* Kicker  label-md above display headline */
+header .kicker {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  margin-bottom: 12px;
+}
+
+/* Display headline  Space Grotesk, 3.5rem, -0.02em */
 header .name-container {
   font-size: 3.5rem;
   font-weight: 700;
   font-family: "Space Grotesk", "Inter", sans-serif;
-  margin: 0 0 8px 0;
-  background: linear-gradient(45deg, #fff, #d4f0f8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin: 0 0 10px 0;
+  color: var(--on-primary);
   letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 
 header .job-container {
-  font-size: 1.2rem;
-  margin: 0 0 28px 0;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.05rem;
+  margin: 0 0 32px 0;
+  color: rgba(255, 255, 255, 0.78);
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
+/* Contact chips  Glassmorphism */
 header .contact-container {
   position: static;
 }
@@ -176,28 +295,29 @@ header .contact-container {
 header .contact-container .contact-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 header .contact-container .contact-list li {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   height: auto;
   padding: 7px 16px;
-  background: rgba(255, 255, 255, 0.12);
+  /* surface_container_highest at ~18% opacity + 20px blur */
+  background: rgba(189, 208, 224, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 25px;
-  color: white;
-  font-size: 13px;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--on-primary);
+  font-size: 12.5px;
+  font-family: "Inter", sans-serif;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 header .contact-container .contact-list li:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-1px);
+  background: rgba(189, 208, 224, 0.30);
+  transform: translateY(-2px);
 }
 
 header .contact-container .contact-list li span {
@@ -205,316 +325,439 @@ header .contact-container .contact-list li span {
   height: 16px;
   text-align: center;
   line-height: 16px;
-  font-size: 13px;
-  opacity: 0.85;
+  font-size: 12px;
+  opacity: 0.72;
   flex-shrink: 0;
 }
 
 /* ============================================================
-   Main Layout
+   Main Layout  Tonal Column Split
+   surface for main, surface-low for sidebar via ::before pseudo
    ============================================================ */
 #main {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 310px;
-  gap: 48px;
-  padding: 56px 56px 64px;
-  background: #f0f4f8;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+  background: var(--surface);
+  isolation: isolate;
+}
+
+/* Sidebar column background  fills full height of #main */
+#main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background: var(--surface-low);
+  pointer-events: none;
+  z-index: -1;
+}
+
+#main > .resume-item-wrapper,
+#main > .sidebar {
+  position: relative;
 }
 
 #main > .resume-item-wrapper {
-  position: relative;
-  display: grid;
-  gap: 36px;
+  padding: 56px 48px 64px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 /* ============================================================
-   Resume Item Cards
+   Resume Sections  No Card-itis
+   Sections flow on surface. No white boxes. No hard borders.
    ============================================================ */
-#main .resume-item {
+.resume-item {
   position: relative;
-  background: #fff;
-  border-radius: 14px;
-  padding: 40px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#main .resume-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-#main .resume-item .inner {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-/* Section titles */
-#main .resume-item h2 {
+/* Section headings  Space Grotesk display, -0.02em */
+.resume-item h2 {
   position: relative;
-  padding: 0 0 16px 0;
-  font-size: 1.45rem;
-  text-align: left;
-  text-transform: capitalize;
-  color: var(--text-dark);
-  margin-bottom: 24px;
+  font-size: 1.35rem;
   font-weight: 700;
   font-family: "Space Grotesk", "Inter", sans-serif;
+  color: var(--on-surface);
   letter-spacing: -0.02em;
+  margin: 0 0 28px 0;
+  padding-bottom: 14px;
 }
 
-/* Gradient underline */
-#main .resume-item h2::after {
+/* Tertiary accent line  grows on scroll reveal (accent bar grow) */
+.resume-item h2::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 40px;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-light) 40%, transparent 100%);
+  background: var(--tertiary);
+  transform-origin: left;
+  transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
 }
 
-/* Small accent square before title */
-#main .resume-item h2::before {
-  content: '';
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: 2px;
-  margin-right: 10px;
-  vertical-align: middle;
-  margin-bottom: 3px;
+.resume-item.is-visible h2::after {
+  width: 64px;
 }
 
-#main ul li {
-  position: relative;
-  margin: 0 0 36px;
+/* Remove old accent square */
+.resume-item h2::before {
+  display: none;
 }
 
 /* ============================================================
-   Experience
+   Experience Timeline
    ============================================================ */
 .experience ul {
   position: relative;
 }
 
+.experience ul li {
+  position: relative;
+  margin: 0 0 40px;
+  padding-left: 18px;
+}
+
+.experience ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* 2px teal left accent bar  scaleY(01) with 200ms base delay */
+.experience ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--tertiary);
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 1px;
+}
+
+/* Staggered accent bar reveals  90ms increments, capped at 4 (360ms) */
+.resume-item.is-visible .experience ul li:nth-child(1)::before { transform: scaleY(1); transition-delay: 0.09s; }
+.resume-item.is-visible .experience ul li:nth-child(2)::before { transform: scaleY(1); transition-delay: 0.18s; }
+.resume-item.is-visible .experience ul li:nth-child(3)::before { transform: scaleY(1); transition-delay: 0.27s; }
+.resume-item.is-visible .experience ul li:nth-child(4)::before { transform: scaleY(1); transition-delay: 0.36s; }
+.resume-item.is-visible .experience ul li:nth-child(5)::before { transform: scaleY(1); transition-delay: 0.36s; }
+.resume-item.is-visible .experience ul li:nth-child(6)::before { transform: scaleY(1); transition-delay: 0.36s; }
+
 .experience h3 {
-  font-size: 1.15rem;
-  color: var(--text-dark);
+  font-size: 1.05rem;
+  color: var(--on-surface);
   margin-bottom: 4px;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   letter-spacing: -0.01em;
-  padding-right: 145px;
+  padding-right: 150px;
 }
 
 .experience .company {
   margin: 0 0 8px;
-  color: var(--coral);
-  font-size: 0.95rem;
+  color: var(--primary-container);
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.01em;
 }
 
+/* Date  Technical chip: surface-low bg, 2px radius, primary text */
 .experience .date {
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 0;
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
-  color: white;
-  font-size: 11px;
-  padding: 4px 11px;
-  border-radius: 15px;
+  background: var(--surface-low);
+  color: var(--primary);
+  font-size: 10.5px;
+  padding: 4px 10px;
+  border-radius: 2px;
   font-weight: 500;
   white-space: nowrap;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.03em;
 }
 
 .experience .detail {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--text-mid);
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: var(--on-surface-variant);
   font-family: "Inter", sans-serif;
   font-weight: 400;
   margin-top: 8px;
 }
 
-/* Highlight boxes  teal for odd, coral for even */
+/* Highlight block  tonal, 2px accent bar, no solid line borders */
 .experience .highlight {
-  background: linear-gradient(135deg, var(--primary-lighter), #f0faff);
-  padding: 12px 15px;
-  border-radius: 8px;
+  background: var(--surface-low);
+  padding: 11px 15px;
+  border-radius: 3px;
   margin-top: 12px;
-  border-left: 3px solid var(--primary);
-  font-size: 14px;
+  border-left: 2px solid var(--tertiary);
+  font-size: 13px;
   font-weight: 400;
-  color: var(--text-mid);
+  color: var(--on-surface-variant);
   line-height: 1.55;
 }
 
 .experience ul li:nth-child(even) .highlight {
-  background: linear-gradient(135deg, var(--coral-lighter), #fff7f5);
-  border-left-color: var(--coral);
+  background: var(--surface-container);
+  border-left-color: var(--primary-container);
 }
 
 /* ============================================================
-   Project / Achievements
+   Project / Achievements  No Card-itis
+   Alternating tonal backgrounds replace white card boxes
    ============================================================ */
-.project ul li {
-  font-size: 15px;
-  line-height: 1.65;
-  background: var(--bg-subtle);
-  padding: 20px 22px;
-  border-radius: 12px;
-  border-left: 4px solid var(--primary);
-  margin-bottom: 18px;
+.project ul {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Alternate accent colour */
-.project ul li:nth-child(even) {
-  border-left-color: var(--coral);
+.project ul li {
+  position: relative;
+  font-size: 14px;
+  line-height: 1.65;
+  padding: 22px 22px 22px 36px;
+  margin-bottom: 0;
 }
+
+.project ul li:nth-child(odd)  { background: var(--surface-low);       }
+.project ul li:nth-child(even) { background: var(--surface-container); }
+
+/* 2px accent bar  scaleY on section reveal */
+.project ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--tertiary);
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project ul li:nth-child(even)::before {
+  background: var(--primary-container);
+}
+
+.resume-item.is-visible .project ul li:nth-child(1)::before { transform: scaleY(1); transition-delay: 0.05s; }
+.resume-item.is-visible .project ul li:nth-child(2)::before { transform: scaleY(1); transition-delay: 0.14s; }
+.resume-item.is-visible .project ul li:nth-child(3)::before { transform: scaleY(1); transition-delay: 0.23s; }
+.resume-item.is-visible .project ul li:nth-child(4)::before { transform: scaleY(1); transition-delay: 0.32s; }
 
 .project h3 {
-  position: relative;
   display: block;
-  color: var(--text-dark);
-  font-size: 1.1rem;
+  color: var(--on-surface);
+  font-size: 1rem;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
 
-.project h3::after {
-  content: "";
+/* Nav underline hover  scaleX(01), 0.2s */
+.project h3 a {
+  color: var(--on-surface);
+  position: relative;
+  text-decoration: none;
+}
+
+.project h3 a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.project h3 a:hover {
+  color: var(--primary-container);
+}
+
+.project h3 a:hover::after {
+  transform: scaleX(1);
 }
 
 .project .detail {
   display: block;
-  font-size: 14px;
-  color: var(--text-mid);
-  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  margin-bottom: 10px;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.68;
 }
 
-.project .tags {
-  font-size: 11.5px;
-  color: var(--primary);
-  background: rgba(58, 110, 128, 0.1);
+.project .highlight {
+  background: rgba(255, 255, 255, 0.55);
+  padding: 9px 13px;
+  border-radius: 3px;
+  margin-top: 10px;
+  border-left: 2px solid var(--tertiary);
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+}
+
+.project ul li:nth-child(even) .highlight {
+  border-left-color: var(--primary-container);
+}
+
+/* Technical Chips  secondary_container, 2px radius (sm = 0.125rem) */
+.project p.tags {
+  font-size: 11px;
+  color: var(--on-secondary-container);
+  background: var(--secondary-container);
   padding: 3px 10px;
-  border-radius: 12px;
+  border-radius: 2px;
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: 500;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.01em;
 }
 
-.project ul li:nth-child(even) .tags {
-  color: var(--coral);
-  background: rgba(212, 115, 90, 0.1);
-}
-
+/* Bullets sub-list */
 .project .bullets {
-  margin: 12px 0 0 0;
-  background: white;
-  padding: 12px 15px;
-  border-radius: 8px;
+  margin: 10px 0 0;
+  background: rgba(255, 255, 255, 0.40);
+  padding: 10px 14px;
+  border-radius: 3px;
 }
 
-/* Reset bullet items  override parent project li styles */
 .project .bullets li {
   list-style: none !important;
-  font-size: 13px !important;
-  color: var(--text-mid) !important;
-  padding: 4px 0 4px 20px !important;
+  font-size: 12.5px !important;
+  color: var(--on-surface-variant) !important;
+  padding: 4px 0 4px 18px !important;
   position: relative !important;
-  border-left: none !important;
   background: none !important;
   border-radius: 0 !important;
   margin-bottom: 4px !important;
+  border-left: none !important;
 }
 
 .project .bullets li::before {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--primary);
-  font-weight: bold;
+  left: 2px;
+  color: var(--tertiary);
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 600;
 }
 
-/* ============================================================
-   Skills
-   ============================================================ */
-.skill ul li {
-  height: auto;
-  min-height: 46px;
-  background: var(--bg-subtle);
-  border-radius: 10px;
-  padding: 10px 16px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+/* Nav underline on bullet links */
+.project .bullets li a {
+  color: var(--primary-container);
+  position: relative;
+  text-decoration: none;
+}
+
+.project .bullets li a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
   transition: transform 0.2s ease;
 }
 
-.skill ul li:hover {
-  transform: scale(1.015);
-}
-
-.skill h3 {
-  float: none;
-  width: 42%;
-  flex-shrink: 0;
-  height: auto;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--text-dark);
-  font-family: "Inter", sans-serif;
-}
-
-.skill .skill-bar {
-  float: none;
-  flex: 1;
-  height: 7px;
-  background: #e2e8f0;
-  border-radius: 4px;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Teal  coral gradient skill bars */
-.skill .skill-bar .bar {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary), var(--coral));
-  border-radius: 4px;
-  position: relative;
-  animation: fillBar 1.5s ease-out;
-}
-
-@keyframes fillBar {
-  from { width: 0 !important; }
+.project .bullets li a:hover::after {
+  transform: scaleX(1);
 }
 
 /* ============================================================
    Sidebar
    ============================================================ */
 .sidebar {
+  padding: 56px 32px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   position: sticky;
   top: 40px;
   height: fit-content;
-  display: grid;
-  gap: 28px;
+  align-self: start;
 }
 
 .sidebar .resume-item {
+  padding: 0;
+}
+
+/* ============================================================
+   Skills
+   ============================================================ */
+.skill ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill ul li {
+  height: auto;
+  min-height: 34px;
+  background: transparent;
+  border-radius: 0;
+  padding: 8px 0;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: none;
+}
+
+/* Ghost border at ~20% opacity  accessibility fallback per 4 */
+.skill ul li + li {
+  border-top: 1px solid rgba(192, 200, 204, 0.22);
+}
+
+.skill h3 {
+  float: none;
+  width: 44%;
+  flex-shrink: 0;
+  height: auto;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--on-surface-variant);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.skill .skill-bar {
+  float: none;
+  flex: 1;
+  height: 3px;
+  background: var(--surface-container);
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill .skill-bar .bar {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-container));
+  border-radius: 0;
+  animation: fillBar 1.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* ============================================================
@@ -522,23 +765,23 @@ header .contact-container .contact-list li span {
    ============================================================ */
 footer {
   position: relative;
-  padding: 22px 40px;
-  font-size: 12px;
+  padding: 24px 40px;
+  font-size: 11.5px;
   text-align: center;
-  color: var(--text-light);
-  background: white;
-  border-top: 3px solid;
-  border-image: linear-gradient(90deg, var(--primary) 0%, var(--coral) 100%) 1;
+  color: var(--on-surface-variant);
+  /* Tonal shift creates separation  no harsh top border */
+  background: var(--surface-container);
 }
 
 footer a {
-  font-weight: bold;
+  font-weight: 600;
   color: var(--primary);
-  transition: color 0.2s ease;
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 footer a:hover {
-  color: var(--coral);
+  color: var(--primary-container);
 }
 
 /* ============================================================
@@ -556,6 +799,16 @@ footer a:hover {
 /* ============================================================
    Responsive
    ============================================================ */
+@media (max-width: 960px) {
+  #main {
+    grid-template-columns: 1fr 260px;
+  }
+
+  #main::before {
+    width: 260px;
+  }
+}
+
 @media (max-width: 768px) {
   .resume-wrapper {
     margin: 16px;
@@ -563,24 +816,29 @@ footer a:hover {
   }
 
   .language-selector {
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 12px;
     padding: 3px;
   }
 
   .language-selector button {
     padding: 6px 10px;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   header {
     flex-direction: column;
     text-align: center;
-    padding: 50px 24px 36px;
+    padding: 56px 24px 44px;
+    gap: 24px;
+  }
+
+  header .header-content {
+    padding-right: 0;
   }
 
   header .name-container {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
 
   header .contact-container .contact-list {
@@ -589,8 +847,21 @@ footer a:hover {
 
   #main {
     grid-template-columns: 1fr;
-    padding: 24px;
-    gap: 24px;
+  }
+
+  #main::before {
+    display: none;
+  }
+
+  #main > .resume-item-wrapper {
+    padding: 32px 24px;
+  }
+
+  .sidebar {
+    background: var(--surface-low);
+    padding: 32px 24px 40px;
+    position: static;
+    gap: 32px;
   }
 
   .experience h3 {
@@ -600,12 +871,12 @@ footer a:hover {
   .experience .date {
     position: static;
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 }
 
 /* ============================================================
-   Print Styles   preserved from original
+   Print Styles
    ============================================================ */
 @media print {
   .language-selector {
@@ -616,6 +887,7 @@ footer a:hover {
     background: white !important;
     font-size: 12px;
     line-height: 1.4;
+    color: #091d2e !important;
   }
 
   .resume-wrapper {
@@ -627,7 +899,8 @@ footer a:hover {
   }
 
   header {
-    background: #3a6e80 !important;
+    background: #1e5667 !important;
+    animation: none !important;
     border-radius: 0 !important;
     padding: 30px 20px 20px !important;
     page-break-inside: avoid;
@@ -640,6 +913,7 @@ footer a:hover {
   }
 
   header .profile-picture {
+    animation: none !important;
     width: 100px !important;
     height: 100px !important;
   }
@@ -648,102 +922,67 @@ footer a:hover {
     font-size: 2rem !important;
   }
 
-  header .contact-container .contact-list {
+  header .contact-container .contact-list li {
     font-size: 11px !important;
+    backdrop-filter: none !important;
   }
 
   #main {
-    padding: 20px !important;
     display: block !important;
-    grid-template-columns: none !important;
-    gap: 0 !important;
     background: white !important;
+    padding: 0 !important;
+  }
+
+  #main::before {
+    display: none !important;
   }
 
   #main > .resume-item-wrapper {
+    padding: 20px !important;
     display: block !important;
-    width: 100% !important;
   }
 
   .sidebar {
     position: static !important;
     width: 100% !important;
-    margin-top: 20px !important;
-    page-break-before: auto !important;
+    background: white !important;
+    padding: 20px !important;
     display: flex !important;
     flex-direction: row !important;
+    flex-wrap: wrap !important;
     gap: 15px !important;
   }
 
   .sidebar .resume-item {
-    display: block !important;
-    width: auto !important;
-    margin-right: 0 !important;
-    margin-bottom: 15px !important;
-    flex: 1 !important;
-  }
-
-  .sidebar .resume-item:nth-child(3n) {
-    margin-right: 0 !important;
+    flex: 1 1 200px !important;
   }
 
   .resume-item {
-    box-shadow: none !important;
-    border: 1px solid #e0e0e0 !important;
-    border-radius: 8px !important;
-    padding: 20px !important;
-    margin-bottom: 15px !important;
     page-break-inside: avoid;
   }
 
-  .resume-item h2 {
-    font-size: 16px !important;
-    margin-bottom: 12px !important;
-    page-break-after: avoid;
+  .experience ul li::before,
+  .project ul li::before {
+    animation: none !important;
+    transform: scaleY(1) !important;
   }
 
-  .resume-item h3 {
-    font-size: 14px !important;
-    page-break-after: avoid;
+  .resume-item h2::after {
+    width: 64px !important;
+    transition: none !important;
   }
 
-  .experience {
-    page-break-inside: avoid;
-    margin-bottom: 15px !important;
-  }
-
-  .experience .company {
-    font-size: 12px !important;
-  }
-
-  .experience .date {
-    font-size: 11px !important;
-  }
-
-  .bullets li {
-    font-size: 11px !important;
-    margin-bottom: 4px !important;
+  .project ul li {
+    background: #edf4ff !important;
     page-break-inside: avoid;
   }
 
-  .sidebar .resume-item {
-    display: inline-block !important;
-    width: calc(33.333% - 10px) !important;
-    margin-right: 15px !important;
-    margin-bottom: 15px !important;
-    vertical-align: top !important;
+  .project ul li:nth-child(even) {
+    background: #deeaf5 !important;
   }
 
-  .sidebar .resume-item:nth-child(3n) {
-    margin-right: 0 !important;
-  }
-
-  .resume-item:nth-child(3) {
-    page-break-before: page;
-  }
-
-  .resume-item:last-child {
-    page-break-inside: avoid;
+  .experience .highlight {
+    background: #edf4ff !important;
   }
 
   footer {

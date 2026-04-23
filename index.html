@@ -78,6 +78,7 @@
           <img src="./assets/img/profile.jpg" alt="Jan De Dobbeleer" />
         </div>
         <div class="header-content">
+          <span class="kicker">Engineering Leader · GitHub Star · Microsoft MVP</span>
           <h2 class="name-container">Jan De Dobbeleer</h2>
           <h3 class="job-container" data-i18n="header.jobTitle">AI-Native Software Engineer & Engineering Leader</h3>
           <div class="contact-container">
@@ -112,7 +113,7 @@
       <section id="main">
         <div class="resume-item-wrapper">
           <!-- achievements -->
-          <section class="resume-item project">
+          <section class="resume-item project reveal">
             <div class="inner">
               <h2 data-i18n="sections.achievements.title">Key Achievements</h2>
               <ul>
@@ -211,7 +212,7 @@
           <!-- achievements -->
 
           <!-- experince -->
-          <section class="resume-item experience">
+          <section class="resume-item experience reveal">
             <div class="inner">
               <h2 data-i18n="sections.leadership.title">Leadership Experience</h2>
               <ul>
@@ -301,7 +302,7 @@
           <!-- experience -->
 
           <!-- past experience -->
-          <section class="resume-item experience">
+          <section class="resume-item experience reveal">
             <div class="inner">
               <h2 data-i18n="sections.earlyCareer.title">
                 Early Career & Technical Foundation
@@ -363,12 +364,12 @@
           <!-- past experience -->
 
           <!-- craftsmanship background -->
-          <section class="resume-item experience">
+          <section class="resume-item experience reveal">
             <div class="inner">
               <h2 data-i18n="sections.craftsmanship.title">
                 Craftsmanship Foundation
               </h2>
-              <p style="font-style: italic; color: var(--coral); margin-bottom: 20px;" data-i18n="sections.craftsmanship.subtitle">
+              <p style="font-style: italic; color: var(--primary-container); margin-bottom: 20px;" data-i18n="sections.craftsmanship.subtitle">
                 My precision and attention to detail in software engineering stems from years of luxury watchmaking craftsmanship.
               </p>
               <ul>
@@ -412,7 +413,7 @@
         <!-- Sidebar -->
         <div class="sidebar">
           <!-- skills -->
-          <section class="resume-item skill">
+          <section class="resume-item skill reveal">
             <div class="inner">
               <h2 data-i18n="sections.skills.leadership.title">Leadership Skills</h2>
               <ul>
@@ -452,7 +453,7 @@
           <!-- skills -->
 
           <!-- technical -->
-          <section class="resume-item skill">
+          <section class="resume-item skill reveal">
             <div class="inner">
               <h2 data-i18n="sections.skills.technical.title">Technical Stack</h2>
               <ul>
@@ -498,7 +499,7 @@
           <!-- technical -->
 
           <!-- languages -->
-          <section class="resume-item skill">
+          <section class="resume-item skill reveal">
             <div class="inner">
               <h2 data-i18n="sections.skills.languages.title">Languages</h2>
               <ul>
@@ -815,6 +816,33 @@
         var savedLang = localStorage.getItem('preferred-language') || 'en';
         switchLanguage(savedLang);
       });
+    </script>
+    <script>
+      (function() {
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function revealAll() {
+          document.querySelectorAll('.reveal').forEach(function(el) {
+            el.classList.add('is-visible');
+          });
+        }
+        if (prefersReduced || !window.IntersectionObserver) {
+          document.addEventListener('DOMContentLoaded', revealAll);
+          return;
+        }
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('.reveal').forEach(function(el) {
+            observer.observe(el);
+          });
+        });
+      })();
     </script>
   </body>
 </html>
