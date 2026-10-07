@@ -1,12 +1,19 @@
 {
   "header": {
-    "jobTitle": "AI-Native Software Engineer & Engineering Leader"
+    "jobTitle": "AI-Native Software Engineer & Engineering Leader",
+    "summary": "Engineering leader met 13+ jaar ervaring in het verschuiven van IT delivery van vendor-driven naar platform-driven, met source code, CI/CD en delivery onder eigen controle van de organisatie. Momenteel GitHub Delivery Lead bij KBC, waar de volledige KBC BE IT-omgeving op één GitHub-platform komt. Eerder leidde ik 90 mensen verdeeld over 9 teams bij Nike, inclusief vendor- en nearshore delivery, en was ik CTO bij TrendMiner.",
+    "stats": {
+      "years": "jaar engineering leadership",
+      "repos": "repositories op één GitHub-platform bij KBC",
+      "people": "mensen in 9 teams aangestuurd bij Nike",
+      "delivery": "deployment frequentie en 60% kortere lead time bij TrendMiner"
+    }
   },
   "sections": {
     "achievements": {
       "title": "Key Achievements",
       "ohMyPosh": {
-        "description": "Ontwikkelde 's werelds populairste cross-platform prompt theme engine, wat de manier waarop miljoenen developers met hun terminals omgaan heeft getransformeerd. Gepresenteerd in Microsoft keynotes en wereldwijd gebruikt door developers.",
+        "description": "Creëerde en leid Oh My Posh, een open source product met een grote community van gebruikers en contributors: 's werelds populairste cross-platform prompt theme engine, gepresenteerd in Microsoft keynotes.",
         "impact": "Impact",
         "bullets": {
           "windowsWednesday": "Gepresenteerd in Windows Wednesday - Microsoft Officieel Kanaal",
@@ -27,20 +34,20 @@
       },
       "thoughtLeadership": {
         "title": "Engineering Thought Leadership",
-        "description": "Geef interne en externe workshops over Agile, DevOps, AI en engineering practices om ontwikkeling te schalen en lead times te verbeteren. Deel expertise binnen organisaties om engineering excellence en transformatie te stimuleren.",
+        "description": "Training en coaching rond AI in de software development lifecycle (SDLC): AI-native architect en coach bij Elia, cursussen voor studenten aan PXL en professionele cursussen voor experts in het vak. Daarnaast workshops over Agile, DevOps en engineering practices om delivery te schalen en lead times te verbeteren.",
         "impact": "Impact",
-        "highlight": "Stel teams en organisaties in staat om software ontwikkeling te versnellen en engineering practices te verbeteren"
+        "highlight": "Teams en organisaties in staat stellen om AI te adopteren en delivery te versnellen"
       }
     },
     "leadership": {
-      "title": "Leadership Skills",
+      "title": "Leadership Experience",
       "nike": {
-        "description": "Leidde meerdere high-performing engineering teams die kritieke platform services leverden voor Nike EMEA, ter ondersteuning van miljoenen klanten in Europa. Fungeerde als Delivery Manager voor software en third-party vendor solutions, waarbij naadloze integratie en succesvolle levering met interne en externe teams werd gewaarborgd. Gaf regelmatig interne en externe workshops over Agile, DevOps, AI en engineering practices om delivery te schalen en lead times te verbeteren in de organisatie.",
+        "description": "Delivery Manager voor software en third-party vendor solutions bij Nike EMEA, met 3 vendors voor zowel staffing als nearshore teams, verantwoordelijk voor integratie en delivery over interne en externe teams. Leidde 9 teams (90 mensen, 80+ engineers) die kritieke platform services leverden voor miljoenen klanten in Europa. Creëerde nieuwe teams georiënteerd rond de business, waarmee business en IT op elkaar werden afgestemd, en presenteerde business cases op boardniveau. Gaf interne en externe workshops over Agile, DevOps en AI om delivery te schalen en lead times te verbeteren.",
         "impact": "Impact",
-        "highlight": "Management van 70+ engineers verdeeld over 5 teams, aansturing van digital transformation initiatieven"
+        "highlight": "Leidde 9 teams en 90 mensen (80+ engineers); stuurde 3 vendors aan voor staffing en nearshore delivery"
       },
       "trendminerCto": {
-        "description": "Vergroting van de engineering organisatie en aansturing van cloud transformation strategie als CTO na succesvolle acquisitie door Software AG. Fungeerde als Cloud Architect voor het ontwerp van de nieuwe cloud-native implementatie, modernisering van de platform architectuur voor enterprise-scale deployment.",
+        "description": "Schaalde de engineering organisatie en stuurde de cloud transformation strategie aan als CTO na de acquisitie door Software AG. Herstructureerde 5 teams (ongeveer 70 mensen) en optimaliseerde ze naar business goals, presenteerde business cases op boardniveau en was Cloud Architect voor de nieuwe cloud-native implementatie.",
         "achievement": "Prestatie",
         "highlight": "Leidde post-acquisitie integratie en modernisering van enterprise software stack"
       },
@@ -50,7 +57,7 @@
         "highlight": "Verbeterde deployment frequentie met 300%, reduceerde lead time met 60%"
       },
       "inThePocket": {
-        "description": "Leidde cross-functionele agile teams die innovatieve digitale oplossingen leverden voor Fortune 500 klanten, consistent projecten op tijd en onder budget opgeleverd. Fungeerde als Architect voor banking, identificatie en luchtvaart oplossingen, ontwierp veilige en schaalbare cloud infrastructuren voor mission-critical applicaties.",
+        "description": "Leidde cross-functionele agile teams die digitale oplossingen leverden voor Fortune 500 klanten, consistent op tijd en onder budget. Creëerde en staffte 2 nieuwe teams van nul om legacy applicaties te leveren en over te nemen, en presenteerde business cases op boardniveau. Was Architect voor banking en luchtvaart oplossingen en ontwierp veilige en schaalbare cloud infrastructuren voor mission-critical applicaties.",
         "businessImpact": "Business Impact",
         "highlight": "Beheerde €2M+ project portfolio met 98% client satisfaction rate"
       },
@@ -60,22 +67,24 @@
         "highlight": "175% team groei, implementeerde DevOps practices voor meerdere merken"
       },
       "kbc": {
-        "description": "Leid de GitHub platform strategie en delivery bij een van Belgie's grootste bank- en verzekeringsgroepen. Bevorder engineering excellence door verbeterde developer tooling, platform adoptie en DevOps transformatie initiatieven bij engineering teams.",
-        "impact": "Impact",
-        "highlight": "KBC engineering teams in staat stellen sneller en betrouwbaarder te leveren via GitHub platform adoptie en developer experience verbeteringen"
+        "description": "Leid de GitHub platform strategie en delivery bij een van de grootste bank- en verzekeringsgroepen van België, een gereguleerde omgeving (banking en insurance).",
+        "bullets": {
+          "platform": "Platform: de volledige KBC BE IT-omgeving, 20.000 repositories, draait op GitHub als één platform",
+          "adoption": "Adoptie: platform adoptie en developer experience bij de engineering teams",
+          "devops": "Delivery: DevOps transformatie-initiatieven bij de engineering teams",
+          "board": "Governance: business cases gepresenteerd op boardniveau"
+        },
+        "impact": "Resultaten",
+        "highlight": "Betere samenwerking tussen teams, meer teamgeluk en betere delivery"
       }
     },
     "earlyCareer": {
       "title": "Early Career & Technical Foundation",
       "frontendApiLead": {
-        "description": "Leidde technische migratie naar nieuwe backend architectuur, waarbij business requirements werden afgestemd met technische implementatie doorheen meerdere product teams.",
-        "technicalLeadership": "Technisch Leiderschap",
-        "highlight": "Ontwierp API strategie voor 3 mobile brands"
+        "description": "Leidde de technische migratie naar een nieuwe backend architectuur over meerdere product teams, met een API strategie voor 3 mobile brands."
       },
       "mobileAppLead": {
-        "description": "Bouwde en leidde mobile development team, stimuleerde innovatie in de telecom app ruimte met focus op user experience en technische excellentie.",
-        "innovation": "Innovatie",
-        "highlight": "Pionier van mobile-first customer experience in telecom"
+        "description": "Bouwde en leidde het mobile development team van een telecom merk."
       },
       "mobileAppDev": {
         "description": "Cross-platform mobile developer gespecialiseerd in Windows Phone/UWP (C#), met bijdragen aan Android (Java) en iOS (Objective-C) applicaties."
@@ -104,16 +113,24 @@
     },
     "skills": {
       "leadership": {
-        "title": "Leadership Skills",
-        "teamLeadership": "Team Leadership",
-        "publicSpeaking": "Public Speaking",
-        "strategicPlanning": "Strategic Planning"
+        "title": "Kernvaardigheden",
+        "teamLeadership": "Team Leadership & Org Design",
+        "platform": "Platform Engineering",
+        "cicd": "CI/CD & Source Code Governance",
+        "vendor": "Vendor Management",
+        "azure": "Cloud (Azure) Architectuur",
+        "ai": "AI in de SDLC",
+        "exec": "Business Cases & Executive Reporting"
       },
       "technical": {
         "title": "Technical Stack"
       },
       "languages": {
-        "title": "Talen"
+        "title": "Talen",
+        "nl": "Nederlands · Moedertaal",
+        "en": "Engels · Vloeiend",
+        "fr": "Frans · Zeer goed",
+        "de": "Duits · Basis"
       }
     }
   }

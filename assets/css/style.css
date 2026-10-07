@@ -994,3 +994,82 @@ footer a:hover {
     print-color-adjust: exact !important;
   }
 }
+
+/* ============================================================
+   Header summary + key figures
+   ============================================================ */
+header .summary {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 0 24px 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: "Inter", sans-serif;
+}
+
+header .stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 0 28px 0;
+  padding: 0;
+  list-style: none;
+}
+
+header .stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(255, 255, 255, 0.28);
+}
+
+header .stats strong {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--on-primary);
+}
+
+header .stats span {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Inter", sans-serif;
+}
+
+.experience .bullets {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience .bullets li {
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  line-height: 1.55;
+  padding: 2px 0 2px 16px;
+  position: relative;
+}
+
+.experience .bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 6px;
+  height: 2px;
+  background: var(--tertiary);
+}
+
+.skill h3 {
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  header .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    text-align: left;
+  }
+}

@@ -1,12 +1,19 @@
 {
   "header": {
-    "jobTitle": "AI-Native Software Engineer & Engineering Leader"
+    "jobTitle": "AI-Native Software Engineer & Engineering Leader",
+    "summary": "Engineering leader with 13+ years of experience moving IT delivery from vendor-driven to platform-driven, with source code, CI/CD and delivery under the organisation's own control. Currently GitHub Delivery Lead at KBC, bringing the whole KBC BE IT landscape onto a single GitHub platform. Previously led 90 people across 9 teams at Nike, including vendor and nearshore delivery, and was CTO at TrendMiner.",
+    "stats": {
+      "years": "years in engineering leadership",
+      "repos": "repositories on one GitHub platform at KBC",
+      "people": "people across 9 teams led at Nike",
+      "delivery": "deployment frequency and 60% lower lead time at TrendMiner"
+    }
   },
   "sections": {
     "achievements": {
       "title": "Key Achievements",
       "ohMyPosh": {
-        "description": "Built the world's most popular cross-platform prompt theme engine, transforming how millions of developers interact with their terminals. Featured in Microsoft keynotes and used by developers globally.",
+        "description": "Created and lead Oh My Posh, an open source product with a large community of users and contributors: the world's most popular cross-platform prompt theme engine, featured in Microsoft keynotes.",
         "impact": "Impact",
         "bullets": {
           "windowsWednesday": "Featured in Windows Wednesday - Microsoft Official Channel",
@@ -27,20 +34,20 @@
       },
       "thoughtLeadership": {
         "title": "Engineering Thought Leadership",
-        "description": "Delivering internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times. Sharing expertise across organizations to drive engineering excellence and transformation.",
+        "description": "Training and coaching on AI in the software development lifecycle (SDLC): AI-native architect and coach at Elia, courses for students at PXL, and professional courses for experts in the field. Also workshops on Agile, DevOps and engineering practices to scale delivery and improve lead times.",
         "impact": "Impact",
-        "highlight": "Enabling teams and organizations to accelerate delivery and improve engineering practices"
+        "highlight": "Enabling teams and organisations to adopt AI and accelerate delivery"
       }
     },
     "leadership": {
       "title": "Leadership Experience",
       "nike": {
-        "description": "Led multiple high-performing engineering teams delivering critical platform services for Nike EMEA, supporting millions of customers across Europe. Acted as Delivery Manager for software and third-party vendor solutions, ensuring seamless integration and successful delivery across internal and external teams. Regularly conducted internal and external workshops on Agile, DevOps, AI, and engineering practices to scale delivery and improve lead times across the organization.",
+        "description": "Delivery Manager for software and third-party vendor solutions at Nike EMEA, working with 3 vendors covering both staffing and nearshore teams, and responsible for integration and delivery across internal and external teams. Led 9 teams (90 people, 80+ engineers) delivering critical platform services for millions of customers across Europe. Created new teams oriented around the business, aligning business and IT, and presented business cases at board level. Ran internal and external workshops on Agile, DevOps and AI to scale delivery and improve lead times.",
         "impact": "Impact",
-        "highlight": "Managed 70+ engineers across 5 teams, drove digital transformation initiatives"
+        "highlight": "Led 9 teams and 90 people (80+ engineers); steered 3 vendors for staffing and nearshore delivery"
       },
       "trendminerCto": {
-        "description": "Scaled engineering organization and drove cloud transformation strategy as CTO following successful acquisition by Software AG. Served as Cloud Architect for the design of the new cloud-native implementation, modernizing the platform architecture for enterprise-scale deployment.",
+        "description": "Scaled the engineering organisation and drove cloud transformation strategy as CTO following the acquisition by Software AG. Restructured 5 teams (about 70 people) and optimised them towards business goals, presented business cases at board level, and served as Cloud Architect for the new cloud-native implementation.",
         "achievement": "Achievement",
         "highlight": "Led post-acquisition integration and modernization of enterprise software stack"
       },
@@ -50,7 +57,7 @@
         "highlight": "Improved deployment frequency by 300%, reduced lead time by 60%"
       },
       "inThePocket": {
-        "description": "Led cross-functional agile teams delivering innovative digital solutions for Fortune 500 clients, consistently delivering projects on time and under budget. Served as Architect for banking and aerospace solutions, designing secure and scalable cloud infrastructures for mission-critical applications.",
+        "description": "Led cross-functional agile teams delivering digital solutions for Fortune 500 clients, consistently on time and under budget. Created and staffed 2 new teams from scratch to deliver and take over legacy applications, and presented business cases at board level. Served as Architect for banking and aerospace solutions, designing secure and scalable cloud infrastructures for mission-critical applications.",
         "businessImpact": "Business Impact",
         "highlight": "Managed €2M+ project portfolio with 98% client satisfaction rate"
       },
@@ -60,22 +67,24 @@
         "highlight": "175% team growth, established DevOps practices across multiple brands"
       },
       "kbc": {
-        "description": "Leading GitHub platform strategy and delivery at one of Belgium's largest banking and insurance groups. Driving engineering excellence through improved developer tooling, platform adoption, and DevOps transformation initiatives across engineering teams.",
-        "impact": "Impact",
-        "highlight": "Enabling KBC engineering teams to deliver faster and more reliably through GitHub platform adoption and developer experience improvements"
+        "description": "Leading GitHub platform strategy and delivery at one of Belgium's largest banking and insurance groups, a regulated environment (banking and insurance).",
+        "bullets": {
+          "platform": "Platform: the whole KBC BE IT landscape, 20,000 repositories, runs on GitHub as a single platform",
+          "adoption": "Adoption: platform adoption and developer experience across engineering teams",
+          "devops": "Delivery: DevOps transformation initiatives across engineering teams",
+          "board": "Governance: business cases presented at board level"
+        },
+        "impact": "Results",
+        "highlight": "Improved team collaboration, team happiness and delivery"
       }
     },
     "earlyCareer": {
       "title": "Early Career & Technical Foundation",
       "frontendApiLead": {
-        "description": "Led technical migration to new backend architecture, aligning business requirements with technical implementation across multiple product teams.",
-        "technicalLeadership": "Technical Leadership",
-        "highlight": "Architected API strategy for 3 mobile brands"
+        "description": "Led the technical migration to a new backend architecture across multiple product teams, with an API strategy for 3 mobile brands."
       },
       "mobileAppLead": {
-        "description": "Built and led mobile development team, driving innovation in the telecom app space with focus on user experience and technical excellence.",
-        "innovation": "Innovation",
-        "highlight": "Pioneered mobile-first customer experience in telecom"
+        "description": "Built and led the mobile development team of a telecom brand."
       },
       "mobileAppDev": {
         "description": "Cross-platform mobile developer specializing in Windows Phone/UWP (C#), with contributions to Android (Java) and iOS (Objective-C) applications."
@@ -104,16 +113,24 @@
     },
     "skills": {
       "leadership": {
-        "title": "Leadership Skills",
-        "teamLeadership": "Team Leadership",
-        "publicSpeaking": "Public Speaking",
-        "strategicPlanning": "Strategic Planning"
+        "title": "Core Skills",
+        "teamLeadership": "Team Leadership & Org Design",
+        "platform": "Platform Engineering",
+        "cicd": "CI/CD & Source Code Governance",
+        "vendor": "Vendor Management",
+        "azure": "Cloud (Azure) Architecture",
+        "ai": "AI in the SDLC",
+        "exec": "Business Cases & Executive Reporting"
       },
       "technical": {
         "title": "Technical Stack"
       },
       "languages": {
-        "title": "Languages"
+        "title": "Languages",
+        "nl": "Dutch · Native",
+        "en": "English · Fluent",
+        "fr": "French · Very good",
+        "de": "German · Basic"
       }
     }
   }
