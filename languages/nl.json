@@ -41,6 +41,27 @@
     },
     "leadership": {
       "title": "Leadership Experience",
+      "elia": {
+        "description": "Subject matter expert voor AI-native software engineering bij Elia, de Belgische hoogspanningsnetbeheerder. Ik coach 20+ engineers op de GitHub Copilot stack en definieer de richtlijnen, implementaties en trainingen die AI in de software development lifecycle brengen.",
+        "bullets": {
+          "coaching": "Coaching: praktische begeleiding voor 20+ engineers die AI adopteren in de volledige SDLC",
+          "policy": "Richtlijnen: afspraken voor veilig en verantwoord AI-gebruik in een omgeving met kritieke infrastructuur",
+          "implementation": "Implementatie: uitrol en configuratie van de GitHub Copilot stack",
+          "training": "Training: workshops en leertrajecten voor teams"
+        },
+        "impact": "Impact",
+        "highlight": "Engineers die AI dagelijks inzetten in hun delivery, met duidelijke guardrails"
+      },
+      "pxl": {
+        "description": "Ik geef cursussen over AI-native software engineering aan studenten in graduaats- en postgraduaatsopleidingen, over hoe je software bouwt met AI als kernonderdeel van de werkwijze in plaats van als extra.",
+        "bullets": {
+          "audience": "Doelgroep: graduaats- en postgraduaatsopleidingen",
+          "content": "Inhoud: AI-native development practices over de volledige SDLC",
+          "format": "Formaat: cursussen in de academiejaren 2025-2026 en 2026-2027"
+        },
+        "impact": "Impact",
+        "highlight": "De volgende generatie engineers voorbereiden om AI-native te werken"
+      },
       "nike": {
         "description": "Delivery Manager voor software en third-party vendor solutions bij Nike EMEA, met 3 vendors voor zowel staffing als nearshore teams, verantwoordelijk voor integratie en delivery over interne en externe teams. Leidde 9 teams (90 mensen, 80+ engineers) die kritieke platform services leverden voor miljoenen klanten in Europa. Creëerde nieuwe teams georiënteerd rond de business, waarmee business en IT op elkaar werden afgestemd, en presenteerde business cases op boardniveau. Gaf interne en externe workshops over Agile, DevOps en AI om delivery te schalen en lead times te verbeteren.",
         "impact": "Impact",

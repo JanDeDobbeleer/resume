@@ -41,6 +41,27 @@
     },
     "leadership": {
       "title": "Leadership Experience",
+      "elia": {
+        "description": "Subject matter expert for AI-native software engineering at Elia, Belgium's high-voltage grid operator. I coach 20+ engineers on the GitHub Copilot stack, and I define the policies, implementations and trainings that bring AI into the software development lifecycle.",
+        "bullets": {
+          "coaching": "Coaching: hands-on guidance for 20+ engineers adopting AI across the SDLC",
+          "policy": "Policy: guidelines for safe, responsible AI use in a critical-infrastructure environment",
+          "implementation": "Implementation: rollout and configuration of the GitHub Copilot stack",
+          "training": "Training: workshops and learning paths for teams"
+        },
+        "impact": "Impact",
+        "highlight": "Engineers using AI in their daily delivery, with clear guardrails"
+      },
+      "pxl": {
+        "description": "I teach AI-native software engineering courses to graduate and postgraduate students, covering how to build software with AI as a core part of the workflow rather than as an add-on.",
+        "bullets": {
+          "audience": "Audience: graduate and postgraduate programmes",
+          "content": "Content: AI-native development practices across the full SDLC",
+          "format": "Format: courses taught in the 2025-2026 and 2026-2027 academic years"
+        },
+        "impact": "Impact",
+        "highlight": "Preparing the next generation of engineers to work AI-natively"
+      },
       "nike": {
         "description": "Delivery Manager for software and third-party vendor solutions at Nike EMEA, working with 3 vendors covering both staffing and nearshore teams, and responsible for integration and delivery across internal and external teams. Led 9 teams (90 people, 80+ engineers) delivering critical platform services for millions of customers across Europe. Created new teams oriented around the business, aligning business and IT, and presented business cases at board level. Ran internal and external workshops on Agile, DevOps and AI to scale delivery and improve lead times.",
         "impact": "Impact",
